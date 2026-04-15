@@ -1,0 +1,293 @@
+import { motion } from "framer-motion";
+import logo from "@/assets/observenow_ai.png";
+import { Linkedin, X, Instagram, Facebook} from "lucide-react";
+
+import { Link } from "react-router-dom";
+
+import MailIcon from "@/assets/Mail icon.svg";
+import { NavLink } from "./NavLink";
+
+const socialLinks = [
+  {
+    icon: Linkedin,
+    url: "https://www.linkedin.com/company/observenowai/", 
+    label: "LinkedIn",
+  },
+  {
+    icon: X,
+    url: "https://x.com/ObserveNowAI", 
+    label: "X",
+  },
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/observenowai/", 
+    label: "Instagram",
+  },
+  {
+    icon: Facebook,
+    url: "https://www.facebook.com/people/ObserveNow-AI/61582981785784/", 
+    label: "Facebook",
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="relative bg-white overflow-hidden">
+      {/* Top-left soft violet glow */}
+<div className="pointer-events-none hidden sm:block absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#470277]/10 blur-[110px]" />
+
+{/* Bottom-right soft violet glow */}
+<div className="pointer-events-none hidden sm:block absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#470277]/10 blur-[110px]" />
+
+      <div className="container mx-auto px-4 sm:px-6 pt-16 pb-6">
+
+        {/* Newsletter */}
+<div className="flex flex-col lg:flex-row items-center justify-between gap-6 pb-12 border-b border-black/10">
+  <div>
+    <h3 className="font-sora text-2xl sm:text-3xl font-bold text-black mb-2">
+      Subscribe our Newsletter
+    </h3>
+    <p className="text-black/60">
+      Start with a free trial. No purchase is necessary.
+    </p>
+  </div>
+
+  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full max-w-xl">
+    {/* Email Input */}
+    <div className="flex items-center gap-3 bg-white rounded-full px-4 py-3 sm:px-6 sm:py-4 shadow w-full">
+      {/* <Mail className="w-5 h-5 text-indigo-600" /> */}
+      <img
+      src={MailIcon}
+      alt="Mail"
+      className="w-5 h-5"
+    />
+      <input
+        type="email"
+        placeholder="Your Email Address"
+        className="flex-1 outline-none text-sm text-black placeholder:text-black/50"
+      />
+    </div>
+
+    {/* Subscribe Button */}
+    <NavLink to="/">
+    <button
+     className="btn-gradient footer-btn shadow-violet"
+>
+  SUBSCRIBE NOW
+</button>
+</NavLink>
+
+  </div>
+</div>
+
+
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-12">
+
+          {/* Brand */}
+          <div>
+            <img
+  src={logo}
+  alt="Your Brand Name"
+  className="h-16 mb-4"
+ />
+
+            <p className="text-black/60 text-sm w-full md:w-[320px] mb-6">
+              From accurate data extraction to verified contacts, seamless
+              integration, and smart filters — everything you need to find and
+              connect with the right people, faster.
+            </p>
+
+<div className="flex gap-4">
+  {socialLinks.map(({ icon: Icon, url, label }, i) => (
+    <a
+      key={i}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="group"
+    >
+       {/* Gradient Border */}
+      <div className="p-[2px] rounded-full bg-gradient-to-r from-[#48B4E1] to-[#72339F] transition-all duration-300">
+      <div
+        className="
+          w-10 h-10
+          rounded-full
+          flex items-center justify-center
+          bg-[#EFEFEF]
+          transition-all duration-300
+          group-hover:bg-gradient-to-r
+          group-hover:from-[#48B4E1]
+          group-hover:to-[#72339F]
+          group-hover:shadow-[0_0_18px_rgba(114,51,159,0.35)]
+          group-hover:scale-110
+        "
+      >
+        <Icon className="w-5 h-5 text-black transition-colors duration-300 group-hover:text-white" />
+      </div>
+      </div>
+    </a>
+  ))}
+</div>
+
+          </div>
+
+          {/* Useful Links */}
+          <div className="md:ml-24">
+            <h4 className="font-sora font-semibold text-black text-base sm:text-lg leading-none">Useful Links</h4>
+            <div className="relative mt-3 h-[3px] w-full overflow-hidden rounded-full">
+                <motion.div
+                  className="absolute top-0 left-0 h-full w-1/4 rounded-full bg-gradient-to-r from-[#470277] to-[#0B87BA]"
+                  animate={{ x: ["0%", "50%", "0%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+                />
+              </div>
+            <ul className="mt-4 space-y-3 text-black/60 text-sm">
+              <li><a href="/"className="hover:text-black transition-colors">Home</a></li>
+              <li>
+  <Link to="/about" className="hover:text-black transition-colors">
+    About us
+  </Link>
+</li>
+
+              <li>
+  <Link to="https://dashboard.observenow.ai/signup" className="hover:text-black transition-colors">
+    Free Trial
+  </Link>
+</li>
+
+<li>
+  <Link to="/contact" className="hover:text-black transition-colors">
+    Contact Us
+  </Link>
+</li>
+            </ul>
+          </div>
+
+          {/* Help & Support */}
+          <div className="inline-flex flex-col md:ml-4 items-start">
+            <h4 className="font-sora font-semibold text-black text-base sm:text-lg leading-none">Help & Support</h4>
+            <div className="relative mt-3 h-[3px] w-full overflow-hidden rounded-full">
+                <motion.div
+                  className="absolute top-0 left-0 h-full w-1/4 rounded-full bg-gradient-to-r from-[#470277] to-[#0B87BA]"
+                  animate={{ x: ["0%", "50%", "0%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+                />
+              </div>
+            <ul className="mt-4 space-y-3 text-black/60 text-sm">
+              {/* <li><a href="/pricing#faqs" className="hover:text-black transition-colors">FAQs</a></li>
+              <li><a href="/contact" className="hover:text-black transition-colors">Support</a></li>
+              <li><a href="/#howitworks" className="hover:text-black transition-colors">How It Work</a></li>
+              <li><a href="https://chromewebstore.google.com/detail/observenowai-linkedin-pro/pkoknghbccdigldobkjndnbjoagajahi" className="hover:text-black transition-colors">Chrome Extension</a></li> */}
+
+              {/* <li><a href="/privacy" className="hover:text-black transition-colors">Privacy Policy</a></li> */}
+
+              <li>
+  <Link to="/pricing#faqs" className="hover:text-black transition-colors">
+    FAQs
+  </Link>
+</li>
+<li>
+  <Link to="/contact" className="hover:text-black transition-colors">
+    Support
+  </Link>
+</li>
+<li>
+  <Link to="/#howitworks" className="hover:text-black transition-colors">
+    How It Works
+  </Link>
+</li>
+
+<li><a href="https://chromewebstore.google.com/detail/observenowai-linkedin-pro/pkoknghbccdigldobkjndnbjoagajahi" className="hover:text-black transition-colors">Chrome Extension</a></li>
+            </ul>
+          </div>
+
+          {/* CTA */}
+          <div>
+            <h4 className="font-sora font-semibold text-black text-base sm:text-lg leading-none">Lets Try out</h4>
+            <div className="relative mt-3 h-[3px] w-full overflow-hidden rounded-full">
+                <motion.div
+                  className="absolute top-0 left-0 h-full w-1/4 rounded-full bg-gradient-to-r from-[#470277] to-[#0B87BA]"
+                  animate={{ x: ["0%", "50%", "0%"] }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+                />
+              </div>
+            <a
+              href="https://chromewebstore.google.com/detail/observenowai-linkedin-pro/pkoknghbccdigldobkjndnbjoagajahi"
+              className="mt-4 inline-flex items-center gap-3 
+    bg-white text-black 
+    px-3 py-1 
+    rounded-xl 
+    text-sm font-medium 
+    border border-black/20 
+    transition-all duration-200
+    hover:border-[#470277]
+    hover:shadow-[0_6px_20px_rgba(71,2,119,0.15)]"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png"
+                alt="Chrome"
+                className="w-6 h-6"
+              />
+              <span className="leading-tight">
+    <span className="block text-xs text-black/70">Get it on</span>
+    <span className="block font-semibold text-sm">Chrome Store</span>
+  </span>
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom */}
+      <div className="mt-8 pt-4 pb-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-black/50">
+         {/* Left Links */}
+  <div className="flex flex-wrap items-center gap-2 text-xs">
+  <ul className="flex flex-wrap items-center gap-2 text-xs list-none">
+    <li>
+  <Link to="/privacy" className="hover:text-black transition-colors">
+    Privacy Policy
+  </Link>
+</li>
+    <span>|</span>
+    <li>
+  <Link to="/terms" className="hover:text-black transition-colors">
+    Terms
+  </Link>
+</li>
+    <span>|</span>
+    <li>
+  <Link to="/gdpr" className="hover:text-black transition-colors">
+    GDPR
+  </Link>
+</li>
+    <span>|</span>
+    <li>
+  <Link to="/dpdp" className="hover:text-black transition-colors">
+    DPDP Act
+  </Link>
+</li>
+    <span>|</span>
+    <li>
+  <Link to="https://docs.google.com/forms/d/e/1FAIpQLSf-PCdgL-WlIfkLCFl9A6Dut6FMJykz_u4eVYuC45ISlCfwYw/viewform?usp=publish-editor" className="hover:text-black transition-colors">
+    Data Removal
+  </Link>
+</li>
+    <span>|</span>
+    <li>
+  <Link to="/cookie" className="hover:text-black transition-colors">
+    Cookie Policy
+  </Link>
+</li>
+</ul>
+  </div>
+
+        <div className="text-center md:text-right mt-4 md:mt-5">
+          Observenow.ai © 2026 Adverbo Productions LLP. All Rights Reserved.
+        </div>
+      </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
