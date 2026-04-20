@@ -27,7 +27,6 @@ const BlogDetailPage = () => {
       <BlogsHero
         eyebrow={post.eyebrow}
         title={post.title}
-        subtitle={post.subtitle}
         image={post.image}
         readTime={post.readTime}
         publishedAt={post.publishedAt}

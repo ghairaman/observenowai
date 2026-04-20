@@ -90,8 +90,8 @@ const steps = [
 
 const stats = [
   { icon: IconUsers, value: "50K+", label: "Business Leads" },
-  { icon: IconUsers, value: "34M+", label: "CXO Data Sets" },
-  { icon: IconUsers, value: "340M+", label: "CXO Leaders Data Points" },
+  { icon: IconUsers, value: "300M+", label: "Decision Makers" },
+  { icon: IconUsers, value: "3B+", label: "CXO Leaders Data Points" },
   { icon: IconUsers, value: "800K+", label: "B2B Organisations" },
 ];
 

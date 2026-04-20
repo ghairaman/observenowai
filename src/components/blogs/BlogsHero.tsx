@@ -3,14 +3,13 @@ import { motion } from "framer-motion";
 
 type BlogsHeroProps = {
   title: string;
-  subtitle: string;
   eyebrow?: string;
   image?: string;
   readTime?: string;
   publishedAt?: string;
 };
 
-const BlogsHero = ({ title, subtitle, eyebrow, image, readTime, publishedAt }: BlogsHeroProps) => {
+const BlogsHero = ({ title, eyebrow, image, readTime, publishedAt }: BlogsHeroProps) => {
   const renderTitle = () => {
     const highlightTerms = ["Bad Data", "Big Data", "B2B", "in", "Cold Outreach", "Data Accuracy"];
     const regex = new RegExp(
@@ -57,7 +56,7 @@ const BlogsHero = ({ title, subtitle, eyebrow, image, readTime, publishedAt }: B
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="font-sora max-w-4xl text-4xl font-bold leading-tight text-[#1A1230] sm:text-5xl md:text-center lg:text-6xl"
+          className="font-sora max-w-6xl text-4xl font-bold leading-tight text-[#1A1230] sm:text-5xl md:text-center lg:text-6xl"
         >
           {renderTitle()}
         </motion.h1>
@@ -81,15 +80,6 @@ const BlogsHero = ({ title, subtitle, eyebrow, image, readTime, publishedAt }: B
             </span>
           ) : null}
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.15 }}
-          className="mt-8 max-w-3xl text-base leading-8 text-[#5B5570] sm:text-lg"
-        >
-          {subtitle}
-        </motion.p>
 
         {image ? (
           <motion.div
