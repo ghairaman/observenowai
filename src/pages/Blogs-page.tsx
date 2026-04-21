@@ -95,34 +95,7 @@ const Blogs = () => {
 
       <section className="pb-20 pt-12 mb: pt-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-          <div className="mb-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mt-16 mb-3 flex justify-center"
-            >
-              <span className="section-badge border border-[#470277]">Insights & Resources</span>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mx-auto mb-8 max-w-3xl text-center"
-            >
-              <h2 className="font-sora text-3xl font-bold leading-tight text-foreground sm:text-4xl md:text-center md:text-5xl lg:text-6xl">
-                Inside Product <span className="font-sora text-[#72339F]/80">Insights</span>
-              </h2>
-            </motion.div>
-
-            <p className="mx-auto mb-14 max-w-3xl font-sora text-base text-muted-foreground sm:text-sm md:mb-16 md:text-lg">
-              Product insights by ObserveNow is your go-to resource for actionable ideas, expert-backed tips,
-              and data-driven strategies. From product development and use case exploration to growth and
-              innovation, explore how modern teams build, refine, and scale products that deliver real impact,
-              all in one place.
-            </p>
-          </div>
+          
 
           <div className="space-y-6">
             {blogPosts.map((post) => (
