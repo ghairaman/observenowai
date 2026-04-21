@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import GridPattern from "@/assets/white-grid.svg";
 import blogImage from "@/assets/blog1.png";
@@ -49,9 +46,6 @@ const blogPosts = [
 ];
 
 const Blogs = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 3;
-
   return (
     <div className="min-h-screen bg-background pt-24">
       <section className="relative overflow-hidden bg-[#470277]/5 pt-8 pb-16 text-center md:pt-20 md:pb-15">
@@ -150,7 +144,9 @@ const Blogs = () => {
                   </span>
 
                   <h3 className="mb-3 text-xl font-semibold leading-snug text-foreground md:text-3xl md:leading-[1.2]">
-                    {post.title}
+                    <Link to={`/blogs/${post.slug}`}>
+                      {post.title}
+                    </Link>
                   </h3>
 
                   <p className="mb-5 max-w-4xl text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -179,39 +175,6 @@ const Blogs = () => {
             ))}
           </div>
 
-          <div className="mt-10 flex items-center justify-center gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-9 w-9 rounded-lg"
-              disabled={currentPage === 1}
-              onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-
-            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-              <Button
-                key={page}
-                variant={page === currentPage ? "default" : "outline"}
-                size="icon"
-                className={`h-9 w-9 rounded-lg ${page === currentPage ? "btn-gradient text-primary-foreground" : ""}`}
-                onClick={() => setCurrentPage(page)}
-              >
-                {page}
-              </Button>
-            ))}
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="h-9 w-9 rounded-lg"
-              disabled={currentPage === totalPages}
-              onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
         </div>
       </section>
     </div>

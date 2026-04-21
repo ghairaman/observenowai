@@ -8,28 +8,28 @@ type BlogDetailContentProps = {
 
 const BlogDetailContent = ({ post }: BlogDetailContentProps) => {
   const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const introSection = post.sections[0]?.heading === "" ? post.sections[0] : null;
+  const sections = introSection ? post.sections.slice(1) : post.sections;
 
   return (
     <div className="pb-24">
       <section className="mx-auto max-w-5xl px-4 sm:px-6">
-        {post.slug === "hidden-cost-of-bad-data" ? (
+
+        {introSection ? (
           <div className="mt-8 rounded-[24px] border-l-4 border-[#72339F] bg-[#F6F1FB] px-5 py-5 text-sm leading-7 text-[#4E4961] sm:px-6">
-            <p className="font-semibold text-[#1A1230]">
-              In B2B organizations, data is often treated as an asset. But when the data is inaccurate, outdated, or incomplete, it quickly turns into a liability, impacting everything from outreach to revenue.
-            </p>
-            <p className="mt-4">
-              The challenge is that bad data doesn’t fail loudly. It operates in the background, silently reducing efficiency, weakening campaigns, and slowing down growth.
-            </p>
+            {introSection.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
           </div>
         ) : null}
 
         <div className="mt-10 space-y-10">
-          {post.sections.map((section) => (
-            <section key={section.heading}>
+          {sections.map((section, index) => (
+            <section key={section.heading || index}>
               <h2 className="text-2xl font-bold text-[#72339F]">{section.heading}</h2>
               <div className="mt-4 space-y-4 text-sm leading-8 text-[#4E4961] sm:text-base">
                 {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} />
                 ))}
               </div>
               {section.bullets?.length ? (

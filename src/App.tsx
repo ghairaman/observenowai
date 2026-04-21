@@ -18,7 +18,6 @@ import DisclaimerPage from "./pages/Disclaimer";
 import BlogsPage from "./pages/Blogs-page";
 import BlogDetailPage from "./pages/BlogDetail-page";
 import NotFound from "./pages/NotFound";
-// import ScrollToHash from "./components/ScroolToHash";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
