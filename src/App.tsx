@@ -17,6 +17,7 @@ import CookiePage from "./pages/Cookie";
 import DisclaimerPage from "./pages/Disclaimer";
 import BlogsPage from "./pages/Blogs-page";
 import BlogDetailPage from "./pages/BlogDetail-page";
+import NotFound from "./pages/NotFound";
 // import ScrollToHash from "./components/ScroolToHash";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -28,9 +29,10 @@ const App = () => ( <QueryClientProvider client={queryClient}> <TooltipProvider>
 ```
     <Routes>
       <Route element={<Layout />}>
+        
         {/* ✅ Main Routes */}
         <Route path="/" element={<Index />} />
-        <Route path="/index.html" element={<Index />} /> {/* FIX */}
+        <Route path="/index.html" element={<Index />} /> {/* Fix */}
 
         <Route path="/about" element={<About />} />
         <Route path="/pricing" element={<Pricing />} />
@@ -45,8 +47,9 @@ const App = () => ( <QueryClientProvider client={queryClient}> <TooltipProvider>
         <Route path="/cookie" element={<CookiePage />} />
         <Route path="/disclaimer" element={<DisclaimerPage />} />
 
-        {/* 🔥 SPA FALLBACK (CRITICAL FIX) */}
-        <Route path="*" element={<Index />} />
+        {/* ✅ 404 Page */}
+        <Route path="*" element={<NotFound />} />
+        
       </Route>
     </Routes>
   </BrowserRouter>
