@@ -89,9 +89,9 @@ const steps = [
 ];
 
 const stats = [
-  { icon: IconUsers, value: "50K+", label: "Business Leads" },
-  { icon: IconUsers, value: "34M+", label: "CXO Data Sets" },
-  { icon: IconUsers, value: "340M+", label: "CXO Leaders Data Points" },
+  { icon: IconUsers, value: "50K+", label: "Business Leads Monthly" },
+  { icon: IconUsers, value: "91%", label: "Data Accuracy" },
+  { icon: IconUsers, value: "350M+", label: "Global Dataset" },
   { icon: IconUsers, value: "800K+", label: "B2B Organisations" },
 ];
 
