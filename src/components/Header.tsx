@@ -60,7 +60,7 @@ const Header = () => {
             </NavLink>
 
             <NavLink
-              to="/blogs"
+              to="https://blog.observenow.ai/"
               className="text-foreground/80 hover:text-foreground font-medium transition-colors"
             >
               Blogs
