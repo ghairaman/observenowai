@@ -104,8 +104,8 @@ const HeroSection = () => {
             </a>
           </Button>
           <Button size="lg" className="btn-gradient text-primary-foreground px-8 py-6 text-base group shadow-violet">
-            <a href="https://calendly.com/anurag-kumar-observenow/30min" className="flex items-center gap-2">
-            Book Demo Call
+            <a href="https://calendly.com/anurag-kumar-observenow/30min" className="flex items-center gap-2" target="_blank">
+            BOOK A DEMO CALL
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
