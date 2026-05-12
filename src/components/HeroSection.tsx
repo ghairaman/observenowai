@@ -13,7 +13,7 @@ import michaelImg from "@/assets/michael.png";
 import sarahImg from "@/assets/sarah.jpeg";
 import davidImg from "@/assets/david.jpeg";
 import emmaImg from "@/assets/emma.png";
-import { NavLink } from "./NavLink";
+
 
 const contactCards = [
   { name: "Ashley Stapleton", role: "Director of Tech", company: "Facebook", email: "ashley@dealsforce.com", phone: "(323) 463-4001", logo: facebookLogo, img: ashleyImg },
