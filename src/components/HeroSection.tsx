@@ -103,15 +103,13 @@ const HeroSection = () => {
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
-          <NavLink to="/contact">
-  <Button
-    size="lg"
-    className="bg-[#72339F] text-white border border-[#72339F] hover:bg-[#6a2f93] hover:border-[#6a2f93] px-8 py-6 text-base group shadow-lg hover:shadow-xl transition-all"
-  >
-    CONTACT SALES
-    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-  </Button>
-</NavLink>
+          <Button size="lg" className="btn-gradient text-primary-foreground px-8 py-6 text-base group shadow-violet">
+            <a href="https://calendly.com/anurag-kumar-observenow/30min" className="flex items-center gap-2">
+            Book Demo Call
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
+          
         </motion.div>
 
         {/* Rating */}
