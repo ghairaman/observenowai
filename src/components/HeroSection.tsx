@@ -8,15 +8,15 @@ import metaLogo from "@/assets/meta logo.webp";
 import appleLogo from "@/assets/apple logo.png";
 import facebookLogo from "@/assets/f-logo.png";
 
-import ashleyImg from "@/assets/ashley.png";
 import michaelImg from "@/assets/michael.png";
 import sarahImg from "@/assets/sarah.jpeg";
 import davidImg from "@/assets/david.jpeg";
 import emmaImg from "@/assets/emma.png";
+import jeet from "@/assets/jeet.jpeg";
 
 
 const contactCards = [
-  { name: "Ashley Stapleton", role: "Director of Tech", company: "Facebook", email: "ashley@dealsforce.com", phone: "(323) 463-4001", logo: facebookLogo, img: ashleyImg },
+  { name: "Jeet Sharma", role: "CO-Founder", company: "ObserveNow", email: "jeet.sharma@observenow.com", phone: "(+91)99104 76546", logo: facebookLogo, img: jeet },
   { name: "Michael Chen", role: "VP of Sales", company: "Microsoft", email: "michael@techcorp.com", phone: "(415) 555-0123", logo: microsoftLogo, img: michaelImg },
   { name: "Sarah Johnson", role: "CEO", company: "Meta", email: "sarah@startupai.com", phone: "(628) 555-0456", logo: metaLogo, img: sarahImg },
   { name: "David Kim", role: "CTO", company: "Microsoft", email: "david@dataflow.io", phone: "(510) 555-0789", logo: microsoftLogo, img: davidImg },
@@ -80,9 +80,9 @@ const HeroSection = () => {
           className="text-center max-w-6xl mx-auto mb-8"
         >
           <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-            AI-Powered GTM & Sales
+            AI-Powered GTM & Sales   Intelligence
             <br />
-           Intelligence Engine by <span className="text-[#72339F]/80">ObserveNow.AI</span>
+          Engine by  <span className="text-[#72339F]/80">ObserveNow.AI</span>
           </h1>
           <p className="font-sora text-lg md:text-base text-muted-foreground max-w-none mx-auto">
             Identify buying intent, connect with decision-makers, and accelerate pipeline generation effortlessly.
