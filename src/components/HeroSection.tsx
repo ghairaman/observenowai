@@ -80,9 +80,9 @@ const HeroSection = () => {
           className="text-center max-w-6xl mx-auto mb-8"
         >
           <h1 className="font-sora text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-            Your AI-Powered GTM & Sales
+            AI-Powered GTM & Sales
             <br />
-           Intelligence Engine with <span className="text-[#72339F]/80">ObserveNow.AI</span>
+           Intelligence Engine by <span className="text-[#72339F]/80">ObserveNow.AI</span>
           </h1>
           <p className="font-sora text-lg md:text-base text-muted-foreground max-w-none mx-auto">
             Identify buying intent, connect with decision-makers, and accelerate pipeline generation effortlessly.
