@@ -289,6 +289,7 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+<<<<<<< HEAD
   {
     slug: "what-ceos-expect-from-sales-outreach-in-2026",
     title: "What CEOs Expect from Sales Outreach in 2026",
@@ -520,3 +521,8 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export const featuredPost = blogPosts[0];
+=======
+];
+
+export const featuredPost = blogPosts[0];
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc

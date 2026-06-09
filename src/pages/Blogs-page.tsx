@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -22,6 +23,56 @@ const Blogs = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
+=======
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import GridPattern from "@/assets/white-grid.svg";
+import blogImage from "@/assets/blog1.png";
+import blogImage2 from "@/assets/blog2.png";
+import blogImage3 from "@/assets/blog3.png";
+import userIcon from "@/assets/user.svg";
+
+const blogPosts = [
+  {
+    id: 1,
+    slug: "hidden-cost-of-bad-data",
+    title: "The Hidden Cost of Bad Data in B2B and How to Fix It Fast",
+    excerpt:
+      "In B2B organizations, data is often treated as an asset. But when the data is inaccurate, outdated or incomplete, it quickly turns into a liability, impacting everything from outreach to revenue.",
+    readTime: "10 mins read",
+    date: "April 9, 2026",
+    author: "ObserveNow.AI Editorial Staff",
+    authorImage: userIcon,
+    image: blogImage,
+  },
+  {
+    id: 2,
+    slug: "why-40-percent-b2b-outreach-fails",
+    title: "Why 40% of B2B Outreach Fails And How Data Enrichment Fixes It",
+    excerpt:
+      "Studies show nearly 40% of B2B outreach fails due to poor data. Discover the core reasons and how data enrichment transforms results.",
+    readTime: "6 min read",
+    date: "April 7, 2026",
+    author: "ObserveNow.AI Editorial Staff",
+    authorImage: userIcon,
+    image: blogImage2,
+  },
+  {
+    id: 3,
+    slug: "from-cold-outreach-to-warm-conversations",
+    title: "From Cold Outreach to Warm Conversations: The Role of Data Accuracy",
+    excerpt:
+      "In B2B marketing and sales, outreach has never been easier to execute yet harder to convert. The core issue is not effort or intent; it is data accuracy.",
+    readTime: "6 min read",
+    date: "April 4, 2026",
+    author: "ObserveNow.AI Editorial Staff",
+    authorImage: userIcon,
+    image: blogImage3,
+  },
+];
+
+const Blogs = () => {
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc
   return (
     <div className="min-h-screen bg-background pt-24">
       <section className="relative overflow-hidden bg-[#470277]/5 pt-8 pb-16 text-center md:pt-20 md:pb-15">
@@ -69,6 +120,7 @@ const Blogs = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       <section className="pt-12 pb-20 md:pt-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
 
@@ -76,6 +128,16 @@ const Blogs = () => {
             {paginatedPosts.map((post) => (
               <article
                 key={post.slug}
+=======
+      <section className="pb-20 pt-12 mb: pt-16">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+          
+
+          <div className="space-y-6">
+            {blogPosts.map((post) => (
+              <article
+                key={post.id}
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc
                 className="flex w-full flex-col gap-6 rounded-[26px] border border-[#72339F]/10 bg-[#F1EAF7] p-5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(114,51,159,0.12)] sm:flex-row sm:items-center sm:p-6 lg:gap-10"
               >
                 <div className="w-full shrink-0 sm:w-[260px] md:w-[290px] lg:w-[320px]">
@@ -107,7 +169,11 @@ const Blogs = () => {
                   <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                     <span>{post.readTime}</span>
                     <span>|</span>
+<<<<<<< HEAD
                     <span>{post.publishedAt}</span>
+=======
+                    <span>{post.date}</span>
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc
                   </div>
 
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -123,6 +189,7 @@ const Blogs = () => {
             ))}
           </div>
 
+<<<<<<< HEAD
           {totalPages > 1 && (
             <div className="mt-10 flex items-center justify-center gap-2">
               <button
@@ -167,10 +234,16 @@ const Blogs = () => {
             </div>
           )}
 
+=======
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc
         </div>
       </section>
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Blogs;
+=======
+export default Blogs;
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc

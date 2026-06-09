@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import HeroSection from "@/components/HeroSection";
 import LogoSection from "@/components/LogoSection";
@@ -42,3 +43,49 @@ const Index = () => {
 };
 
 export default Index;
+=======
+
+import HeroSection from "@/components/HeroSection";
+import LogoSection from "@/components/LogoSection";
+import VideoSection from "@/components/VideoSection";
+import CoreOfferingsSection from "@/components/CoreOfferingsSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import DataToRevenueSection from "@/components/DataToRevenueSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import PricingSection from "@/components/PricingSection";
+import CustomerStoriesSection from "@/components/CustomerStoriesSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* <Header /> */}
+
+      <main className="w-full">
+          <HeroSection />
+          <LogoSection />
+          <VideoSection />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <CoreOfferingsSection />
+          <FeaturesSection />
+        </div>
+          <HowItWorksSection />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <DataToRevenueSection />
+        </div>
+          <WhyChooseUsSection />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <PricingSection />
+          <CustomerStoriesSection />
+        </div>
+          <IntegrationsSection />
+      </main>
+
+      {/* <Footer /> */}
+    </div>
+  );
+};
+
+export default Index;
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc

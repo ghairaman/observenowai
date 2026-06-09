@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 User-agent: *
 Allow: /
 
+=======
+User-agent: *
+Allow: /
+
+>>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc
 Sitemap: https://observenow.ai/sitemap.xml
