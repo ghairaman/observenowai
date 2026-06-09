@@ -46,6 +46,13 @@ const Header = () => {
             </NavLink>
 
             <NavLink
+              to="/product"
+              className="text-foreground/80 hover:text-foreground font-medium transition-colors"
+            >
+              Product
+            </NavLink>
+
+            <NavLink
               to="/pricing"
               className="text-foreground/80 hover:text-foreground font-medium transition-colors"
             >
@@ -59,12 +66,12 @@ const Header = () => {
               Contact Sales
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/blogs"
               className="text-foreground/80 hover:text-foreground font-medium transition-colors"
             >
               Blogs
-            </NavLink>
+            </NavLink> */}
           </div>
           {/* mobile menu button */}
           <div className="md:hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-50">
@@ -93,6 +100,13 @@ const Header = () => {
                 About
               </NavLink>
               <NavLink
+                to="/product"
+                className="text-foreground/80 hover:text-foreground font-medium transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Product
+              </NavLink>
+              <NavLink
                 to="/pricing"
                 className="text-foreground/80 hover:text-foreground font-medium transition-colors"
                 onClick={() => setMenuOpen(false)}
@@ -105,13 +119,6 @@ const Header = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 Contact Sales
-              </NavLink>
-              <NavLink
-                to="/blogs"
-                className="text-foreground/80 hover:text-foreground font-medium transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                Blogs
               </NavLink>
             </div>
           )}

@@ -151,6 +151,12 @@ const Footer = () => {
   </Link>
 </li>
 
+   <li>
+  <Link to="/blogs" className="hover:text-black transition-colors">
+    Blogs
+  </Link>
+</li>
+
               <li>
   <Link to="https://dashboard.observenow.ai/signup" className="hover:text-black transition-colors">
     Free Trial
@@ -200,6 +206,8 @@ const Footer = () => {
 </li>
 
 <li><a href="https://chromewebstore.google.com/detail/observenowai-linkedin-pro/pkoknghbccdigldobkjndnbjoagajahi" className="hover:text-black transition-colors">Chrome Extension</a></li>
+
+
             </ul>
           </div>
 

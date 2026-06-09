@@ -9,6 +9,7 @@ import About from "./pages/About-page"
 import Contact from "./pages/Contact-page"
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing-page";
+import Product from "./pages/Product-page";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import GDPRPage from "./pages/GDPR";
@@ -34,6 +35,7 @@ const App = () => (
          <Route element={<Layout />}>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/product" element={<Product />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<BlogsPage />} />

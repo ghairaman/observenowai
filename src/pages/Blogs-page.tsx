@@ -1,51 +1,27 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import GridPattern from "@/assets/white-grid.svg";
-import blogImage from "@/assets/blog1.png";
-import blogImage2 from "@/assets/blog2.png";
-import blogImage3 from "@/assets/blog3.png";
-import userIcon from "@/assets/user.svg";
-
-const blogPosts = [
-  {
-    id: 1,
-    slug: "hidden-cost-of-bad-data",
-    title: "The Hidden Cost of Bad Data in B2B and How to Fix It Fast",
-    excerpt:
-      "In B2B organizations, data is often treated as an asset. But when the data is inaccurate, outdated or incomplete, it quickly turns into a liability, impacting everything from outreach to revenue.",
-    readTime: "10 mins read",
-    date: "April 9, 2026",
-    author: "ObserveNow.AI Editorial Staff",
-    authorImage: userIcon,
-    image: blogImage,
-  },
-  {
-    id: 2,
-    slug: "why-40-percent-b2b-outreach-fails",
-    title: "Why 40% of B2B Outreach Fails And How Data Enrichment Fixes It",
-    excerpt:
-      "Studies show nearly 40% of B2B outreach fails due to poor data. Discover the core reasons and how data enrichment transforms results.",
-    readTime: "6 min read",
-    date: "April 7, 2026",
-    author: "ObserveNow.AI Editorial Staff",
-    authorImage: userIcon,
-    image: blogImage2,
-  },
-  {
-    id: 3,
-    slug: "from-cold-outreach-to-warm-conversations",
-    title: "From Cold Outreach to Warm Conversations: The Role of Data Accuracy",
-    excerpt:
-      "In B2B marketing and sales, outreach has never been easier to execute yet harder to convert. The core issue is not effort or intent; it is data accuracy.",
-    readTime: "6 min read",
-    date: "April 4, 2026",
-    author: "ObserveNow.AI Editorial Staff",
-    authorImage: userIcon,
-    image: blogImage3,
-  },
-];
+import { blogPosts } from "@/components/blogs/blogData";
 
 const Blogs = () => {
+  const postsPerPage = 3;
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+  const paginatedPosts = blogPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
+
+  useEffect(() => {
+    setCurrentPage((page) => Math.min(page, totalPages));
+  }, [totalPages]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
   return (
     <div className="min-h-screen bg-background pt-24">
       <section className="relative overflow-hidden bg-[#470277]/5 pt-8 pb-16 text-center md:pt-20 md:pb-15">
@@ -93,41 +69,13 @@ const Blogs = () => {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pt-12 pb-20 md:pt-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-          <div className="mb-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mt-16 mb-3 flex justify-center"
-            >
-              <span className="section-badge border border-[#470277]">Insights & Resources</span>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mx-auto mb-8 max-w-3xl text-center"
-            >
-              <h2 className="font-sora text-3xl font-bold leading-tight text-foreground sm:text-4xl md:text-center md:text-5xl lg:text-6xl">
-                Inside Product <span className="font-sora text-[#72339F]/80">Insights</span>
-              </h2>
-            </motion.div>
-
-            <p className="mx-auto mb-14 max-w-3xl font-sora text-base text-muted-foreground sm:text-sm md:mb-16 md:text-lg">
-              Product insights by ObserveNow is your go-to resource for actionable ideas, expert-backed tips,
-              and data-driven strategies. From product development and use case exploration to growth and
-              innovation, explore how modern teams build, refine, and scale products that deliver real impact,
-              all in one place.
-            </p>
-          </div>
 
           <div className="space-y-6">
-            {blogPosts.map((post) => (
+            {paginatedPosts.map((post) => (
               <article
-                key={post.id}
+                key={post.slug}
                 className="flex w-full flex-col gap-6 rounded-[26px] border border-[#72339F]/10 bg-[#F1EAF7] p-5 transition-all duration-300 hover:shadow-[0_18px_40px_rgba(114,51,159,0.12)] sm:flex-row sm:items-center sm:p-6 lg:gap-10"
               >
                 <div className="w-full shrink-0 sm:w-[260px] md:w-[290px] lg:w-[320px]">
@@ -159,7 +107,7 @@ const Blogs = () => {
                   <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                     <span>{post.readTime}</span>
                     <span>|</span>
-                    <span>{post.date}</span>
+                    <span>{post.publishedAt}</span>
                   </div>
 
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -174,6 +122,50 @@ const Blogs = () => {
               </article>
             ))}
           </div>
+
+          {totalPages > 1 && (
+            <div className="mt-10 flex items-center justify-center gap-2">
+              <button
+                type="button"
+                onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
+                disabled={currentPage === 1}
+                aria-label="Go to previous page"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[#9A96A8] transition-colors hover:bg-[#F3ECFA] hover:text-[#72339F] disabled:text-[#9A96A8]"
+              >
+                <ChevronLeft className="h-4 w-4 stroke-[2.25]" />
+              </button>
+
+              {Array.from({ length: totalPages }, (_, index) => {
+                const pageNumber = index + 1;
+                const isActive = pageNumber === currentPage;
+
+                return (
+                  <button
+                    key={pageNumber}
+                    type="button"
+                    onClick={() => setCurrentPage(pageNumber)}
+                    className={`flex h-9 w-9 items-center justify-center rounded-md text-sm font-medium transition-colors ${
+                      isActive
+                        ? "bg-[#5E178D] text-white shadow-[0_8px_18px_rgba(94,23,141,0.18)]"
+                        : "text-[#1A1230] hover:bg-[#F3ECFA] hover:text-[#72339F]"
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              })}
+
+              <button
+                type="button"
+                onClick={() => setCurrentPage((page) => Math.min(page + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                aria-label="Go to next page"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[#9A96A8] transition-colors hover:bg-[#F3ECFA] hover:text-[#72339F] disabled:text-[#9A96A8]"
+              >
+                <ChevronRight className="h-4 w-4 stroke-[2.25]" />
+              </button>
+            </div>
+          )}
 
         </div>
       </section>
