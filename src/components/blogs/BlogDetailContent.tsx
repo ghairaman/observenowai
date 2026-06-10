@@ -100,8 +100,4 @@ const BlogDetailContent = ({ post }: BlogDetailContentProps) => {
   );
 };
 
-<<<<<<< HEAD
 export default BlogDetailContent;
-=======
-export default BlogDetailContent;
->>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc

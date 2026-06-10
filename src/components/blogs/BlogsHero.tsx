@@ -98,8 +98,4 @@ const BlogsHero = ({ title, eyebrow, image, readTime, publishedAt }: BlogsHeroPr
   );
 };
 
-<<<<<<< HEAD
 export default BlogsHero;
-=======
-export default BlogsHero;
->>>>>>> cf21f72938519099f67a55c3b61f7a040e614ccc

@@ -1,6 +1,5 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/NavLink";
 import { motion } from "framer-motion";
 import {
   contactDiscoveryCards,
