@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-// import { Button } from "@/components/ui/button";
 
 import GridPattern from "@/assets/white-grid.svg";
 
@@ -53,5 +52,4 @@ const HeroSection = () => {
     </section>
   );
 };
-
 export default HeroSection;

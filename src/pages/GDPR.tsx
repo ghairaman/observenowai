@@ -10,5 +10,4 @@ const GDPRPage = () => {
     </div>
   );
 };
-
 export default GDPRPage;

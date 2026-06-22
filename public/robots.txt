@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://observenow.ai/sitemap.xml
+`r`nSitemap: https://observenow.ai/sitemap.xml

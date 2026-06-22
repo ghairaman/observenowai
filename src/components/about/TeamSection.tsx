@@ -138,5 +138,4 @@ const TeamSection = () => {
     </section>
   );
 };
-
 export default TeamSection;

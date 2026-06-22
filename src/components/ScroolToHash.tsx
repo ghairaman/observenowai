@@ -15,5 +15,4 @@ const ScrollToHash = () => {
 
   return null;
 };
-
 export default ScrollToHash;

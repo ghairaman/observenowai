@@ -6,7 +6,6 @@ import microsoft from "@/assets/microsoft.png";
 import ibm from "@/assets/ibm.png";
 import ntt from "@/assets/ntt-logo.png";
 import crayon from "@/assets/crayon.png";
-
 // import { Star } from "lucide-react";
 
 const logos = [
@@ -14,7 +13,6 @@ const logos = [
   { src: microsoft, alt: "Microsoft" },
   { src: ibm, alt: "IBM" },
   { src: ntt, alt: "NTT Data" },
-
   { src: crayon, alt: "Crayon" },
 ];
 

@@ -166,4 +166,3 @@ const HowItWorksSection = () => {
 };
 
 export default HowItWorksSection
-

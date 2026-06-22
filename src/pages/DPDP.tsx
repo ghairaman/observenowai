@@ -9,5 +9,4 @@ const DPDPPage = () => {
     </div>
   );
 };
-
 export default DPDPPage;

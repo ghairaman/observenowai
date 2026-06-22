@@ -9,5 +9,4 @@ const DisclaimerPage = () => {
     </div>
   );
 };
-
 export default DisclaimerPage;
