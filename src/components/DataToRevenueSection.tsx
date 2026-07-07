@@ -1,241 +1,423 @@
-import { motion } from "framer-motion";
-import CountUp from "@/components/CountUp";
+// import { useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import CountUp from "@/components/CountUp";
 
-import IconUsers from "@/assets/user.svg";
+// import IconUsers from "@/assets/user.svg";
 
-// FOUNDATION
-import FoundationIcon from "@/assets/foundation.png";
-import FoundationShape from "@/assets/shape1.png";
-import FoundationLine from "@/assets/line.png";
-import Fline from "@/assets/line1.png";
+// // Tab illustrations — place these in your assets folder
+// import FoundationImg from "@/assets/FoundationData.png";
+// import RecognitionImg from "@/assets/RecognitionData.png";
+// import CommunityImg from "@/assets/CommunityData.png";
+// import ReputationImg from "@/assets/ReputationData.png";
+// import LeadImg from "@/assets/LeadData.png";
 
-// RECOGNITION
-import RecognitionIcon from "@/assets/recognition.png";
-import RecognitionShape from "@/assets/shape2.png";
-import RecognitionLine from "@/assets/line.png";
-import Rline from "@/assets/line2.png";
+// import AnalyticsSection from "./AnalyticsSection";
 
-// COMMUNITY
-import CommunityIcon from "@/assets/community.png";
-import CommunityShape from "@/assets/shape3.png";
-import CommunityLine from "@/assets/line.png";
-import Cline from "@/assets/line3.png";
+// const tabs = [
+//   {
+//     id: "foundation",
+//     title: "Foundation",
+//     image: FoundationImg,
+//     badge: "Start with clean data",
+//     heading: "Data Infrastructure",
+//     desc: "Establish a strong foundation with verified, structured, and continuously updated data. This ensures accuracy across systems, reduces noise, and enables precise targeting, giving your teams the confidence to act on reliable insights.",
+//   },
+//   {
+//     id: "recognition",
+//     title: "Recognition",
+//     image: RecognitionImg,
+//     badge: "Know who matters",
+//     heading: "AI Contact Intelligence",
+//     desc: "Use AI-driven intelligence to enrich contact and account data with meaningful context. Identify key decision-makers, understand their roles and behaviors, and prioritize outreach based on signals that truly matter.",
+//   },
+//   {
+//     id: "community",
+//     title: "Community",
+//     image: CommunityImg,
+//     badge: "Build real connections",
+//     heading: "Data + Events Ecosystem",
+//     desc: "Integrate data with event-led engagement to create a connected ecosystem. Foster relationships through meaningful interactions, strengthen your network, and drive consistent engagement across multiple touchpoints.",
+//   },
+//   {
+//     id: "reputation",
+//     title: "Reputation",
+//     image: ReputationImg,
+//     badge: "Grow where it counts",
+//     heading: "India → Global Scale",
+//     desc: "Leverage strong positioning in India and the broader APAC region to build credibility and momentum. Create a scalable framework that supports expansion into global markets while maintaining local relevance.",
+//   },
+//   {
+//     id: "lead",
+//     title: "Lead Intelligence",
+//     image: LeadImg,
+//     badge: "Convert with clarity",
+//     heading: "Market Intelligence",
+//     desc: "Transform raw data into actionable intelligence that drives smarter decisions. Identify high-intent opportunities, refine your strategy, and accelerate conversions with insights designed for measurable growth.",
+//   },
+// ];
 
-// REPUTATION
-import ReputationIcon from "@/assets/reputation.png";
-import ReputationShape from "@/assets/shape4.png";
-import ReputationLine from "@/assets/line.png";
-import Repline from "@/assets/line4.png";
+// const stats = [
+//   { icon: IconUsers, value: "50K+", label: "Business Leads" },
+//   { icon: IconUsers, value: "300M+", label: "Decision Makers" },
+//   { icon: IconUsers, value: "3B+", label: "CXO Leaders Data Points" },
+//   { icon: IconUsers, value: "800K+", label: "B2B Organisations" },
+// ];
 
-// LEAD INTELLIGENCE
-import LeadIcon from "@/assets/lead.png";
-import LeadShape from "@/assets/shape5.png";
-import LeadLine from "@/assets/line.png";
-import Lline from "@/assets/line5.png";
+// const DataToRevenueSection = () => {
+//   const [activeTab, setActiveTab] = useState(0);
+
+//   return (
+//     <section className="py-20 px-4 sm:px-6 bg-background">
+//       <div className="max-w-5xl mx-auto">
+
+//         {/* Badge */}
+//         <div className="flex justify-center mb-6">
+//           <span className="section-badge border border-[#470277]">
+//             Data-driven Strategy
+//           </span>
+//         </div>
+
+//         {/* Heading */}
+//         <h2 className="font-sora text-4xl md:text-5xl font-bold text-center mb-3">
+//           From Data to <span className="text-[#72339F]/80">Revenue</span>
+//         </h2>
+
+//         <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+//           A structured 5-stage approach that transforms raw lead data into targeted outreach, smarter decisions, and sales growth.
+//         </p>
+
+//         {/* ── TAB NAV ── */}
+//         <div className="relative mb-10 overflow-x-auto">
+//           <div className="flex min-w-max sm:min-w-0 border-b border-gray-200">
+//             {tabs.map((tab, index) => (
+//               <button
+//                 key={tab.id}
+//                 onClick={() => setActiveTab(index)}
+//                 className={`
+//                   relative flex-1 text-center py-3 px-3 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 whitespace-nowrap
+//                   ${activeTab === index
+//                     ? "text-foreground"
+//                     : "text-muted-foreground hover:text-foreground/70"
+//                   }
+//                 `}
+//               >
+//                 {tab.title}
+
+//                 {/* Animated underline */}
+//                 {activeTab === index && (
+//                   <motion.div
+//                     layoutId="tab-underline"
+//                     className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#72339F]"
+//                     transition={{ type: "spring", stiffness: 400, damping: 35 }}
+//                   />
+//                 )}
+//               </button>
+//             ))}
+//           </div>
+//         </div>
+
+//         {/* ── TAB CONTENT ── */}
+//         <div className="relative min-h-[420px] sm:min-h-[380px]">
+//           <AnimatePresence mode="wait">
+//             <motion.div
+//               key={activeTab}
+//               initial={{ opacity: 0, y: 16 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               exit={{ opacity: 0, y: -10 }}
+//               transition={{ duration: 0.3 }}
+//               className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center"
+//             >
+//               {/* Left – Illustration */}
+//               <div className="flex items-center justify-center mt-8">
+//                 <img
+//                   src={tabs[activeTab].image}
+//                   alt={tabs[activeTab].heading}
+//                   className="w-full max-w-[360px] sm:max-w-[420px] h-auto object-contain drop-shadow-xl"
+//                 />
+//               </div>
+
+//               {/* Right – Text */}
+//               <div className="flex flex-col gap-4 mt-8">
+//                 {/* Badge pill */}
+//                 <span className="inline-flex w-fit items-center px-4 py-1.5 rounded-full bg-[#72339F] text-white text-xs font-semibold tracking-wide">
+//                   {tabs[activeTab].badge}
+//                 </span>
+
+//                 <h3 className="font-sora text-3xl sm:text-4xl font-bold text-foreground leading-tight">
+//                   {tabs[activeTab].heading}
+//                 </h3>
+
+//                 <p className="text-muted-foreground text-base leading-relaxed max-w-md">
+//                   {tabs[activeTab].desc}
+//                 </p>
+//               </div>
+//             </motion.div>
+//           </AnimatePresence>
+//         </div>
+
+//         <AnalyticsSection />
+
+//         {/* Stats Grid */}
+//         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+//           {stats.map((stat, index) => (
+//             <motion.div
+//               key={index}
+//               initial={{ opacity: 0, y: 30 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true }}
+//               transition={{ delay: index * 0.1 }}
+//               whileHover={{ scale: 1.05, y: -5 }}
+//               className="font-sora bg-card rounded-2xl p-6 border-2 border-[#72339F] text-center shadow-[0_8px_24px_rgba(114,51,159,0.15)]"
+//             >
+//               <div className="w-10 h-10 bg-[#72339F] rounded-xl mx-auto mb-4 flex items-center justify-center">
+//                 <img src={stat.icon} className="w-12 h-12 object-contain" />
+//               </div>
+
+//               <div className="font-sora text-3xl font-bold text-foreground mb-1">
+//                 <CountUp value={stat.value} />
+//               </div>
+
+//               <div className="font-sora text-sm text-muted-foreground">
+//                 {stat.label}
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default DataToRevenueSection;
+
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+import FoundationImg from "@/assets/FoundationData.png";
+import RecognitionImg from "@/assets/RecognitionData.png";
+import CommunityImg from "@/assets/CommunityData.png";
+import ReputationImg from "@/assets/ReputationData.png";
+import LeadImg from "@/assets/LeadData.png";
 
 import AnalyticsSection from "./AnalyticsSection";
 
-const steps = [
+const tabs = [
   {
-    icon: FoundationIcon,
-    shape: FoundationShape,
-    line: FoundationLine,
-    bar: Fline,
+    id: "foundation",
     title: "Foundation",
-    heading: "Data Infrastructure & Quality Base",
-    desc: "Verified data infrastructure for accurate targeting.",
-    barColor: "#0B87BA",
+    image: FoundationImg,
+    badge: "Start with clean data",
+    heading: "Data Infrastructure",
+    desc: "Establish a strong foundation with verified, structured, and continuously updated data. This ensures accuracy across systems, reduces noise, and enables precise targeting, giving your teams the confidence to act on reliable insights.",
   },
   {
-    icon: RecognitionIcon,
-    shape: RecognitionShape,
-    line: RecognitionLine,
-    bar: Rline,
+    id: "recognition",
     title: "Recognition",
-    heading: "AI-Driven Contact + Account Intelligence",
-    desc: "Enriched contact and account insights powered by AI.",
-    barColor: "#0B87BA",
+    image: RecognitionImg,
+    badge: "Know who matters",
+    heading: "AI Contact Intelligence",
+    desc: "Use AI-driven intelligence to enrich contact and account data with meaningful context. Identify key decision-makers, understand their roles and behaviors, and prioritize outreach based on signals that truly matter.",
   },
   {
-    icon: CommunityIcon,
-    shape: CommunityShape,
-    line: CommunityLine,
-    bar: Cline,
+    id: "community",
     title: "Community",
-    heading: "Data + Events Network + Client Ecosystem",
-    desc: "Events and data combined for stronger outreach.",
-    barColor: "#1E5FA8",
+    image: CommunityImg,
+    badge: "Build real connections",
+    heading: "Data + Events Ecosystem",
+    desc: "Integrate data with event-led engagement to create a connected ecosystem. Foster relationships through meaningful interactions, strengthen your network, and drive consistent engagement across multiple touchpoints.",
   },
   {
-    icon: ReputationIcon,
-    shape: ReputationShape,
-    line: ReputationLine,
-    bar: Repline,
+    id: "reputation",
     title: "Reputation",
-    heading: "India + APAC Strong, Global Expansion",
-    desc: "Regional strength with scalable global expansion.",
-    barColor: "#2D469C",
+    image: ReputationImg,
+    badge: "Grow where it counts",
+    heading: "India → Global Scale",
+    desc: "Leverage strong positioning in India and the broader APAC region to build credibility and momentum. Create a scalable framework that supports expansion into global markets while maintaining local relevance.",
   },
   {
-    icon: LeadIcon,
-    shape: LeadShape,
-    line: LeadLine,
-    bar: Lline,
+    id: "lead",
     title: "Lead Intelligence",
-    heading: "Event-Driven Market Intel + Conversion Growth",
-    desc: "Actionable insights that accelerate conversions.",
-    barColor: "#4A1575",
+    image: LeadImg,
+    badge: "Convert with clarity",
+    heading: "Market Intelligence",
+    desc: "Transform raw data into actionable intelligence that drives smarter decisions. Identify high-intent opportunities, refine your strategy, and accelerate conversions with insights designed for measurable growth.",
   },
 ];
 
-const stats = [
-  { icon: IconUsers, value: "50K+", label: "Business Leads" },
-  { icon: IconUsers, value: "300M+", label: "Decision Makers" },
-  { icon: IconUsers, value: "3B+", label: "CXO Leaders Data Points" },
-  { icon: IconUsers, value: "800K+", label: "B2B Organisations" },
-];
+// const stats = [
+//   { icon: IconUsers, value: "50K+", label: "Business Leads" },
+//   { icon: IconUsers, value: "300M+", label: "Decision Makers" },
+//   { icon: IconUsers, value: "3B+", label: "CXO Leaders Data Points" },
+//   { icon: IconUsers, value: "800K+", label: "B2B Organisations" },
+// ];
+
+const SCROLL_PER_TAB = 700;
+const AFTER_LAST_TAB_BUFFER = 500;
+const LAST_TAB_THRESHOLD = 0.95;
 
 const DataToRevenueSection = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const TOTAL_EXTRA = SCROLL_PER_TAB * tabs.length + AFTER_LAST_TAB_BUFFER;
+
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const sectionTop = sectionRef.current.offsetTop;
+      const scrolled = window.scrollY - sectionTop;
+
+      if (scrolled < 0 || scrolled > TOTAL_EXTRA) return;
+
+      const rawIndex = scrolled / SCROLL_PER_TAB;
+      const tabIndex = Math.min(
+        tabs.length - 1,
+        Math.max(0, Math.floor(rawIndex))
+      );
+
+      if (tabIndex === tabs.length - 1 && rawIndex < tabs.length - 1 + LAST_TAB_THRESHOLD) {
+        setActiveTab(tabIndex);
+        return;
+      }
+
+      if (tabIndex < tabs.length - 1) {
+        setActiveTab(tabIndex);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="py-20 px-4 sm:px-6 bg-background">
-      <div className="max-w-5xl mx-auto">
+    <div
+      ref={sectionRef}
+      style={{ height: `calc(100vh + ${SCROLL_PER_TAB * tabs.length}px)` }}
+    >
+      <section
+        className="py-20 px-4 sm:px-6 bg-background"
+        style={{ position: "sticky", top: 0, minHeight: "100vh", overflow: "hidden" }}
+      >
+        <div className="max-w-5xl mx-auto">
 
-        {/* Badge */}
-        <div className="flex justify-center mb-6">
-          <span className="section-badge border border-[#470277]">
-            Data-driven Strategy
-          </span>
-        </div>
+          {/* Badge */}
+          <div className="flex justify-center mb-6">
+            <span className="section-badge border border-[#470277]">
+              Data-driven Strategy
+            </span>
+          </div>
 
-        {/* Heading */}
-        <h2 className="font-sora text-4xl md:text-5xl font-bold text-center mb-3">
-          From Data to <span className="text-[#72339F]/80">Revenue</span>
-        </h2>
+          {/* Heading */}
+          <h2 className="font-sora text-4xl md:text-5xl font-bold text-center mb-3">
+            From Data to <span className="text-[#72339F]/80">Revenue</span>
+          </h2>
 
-        <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-16">
-          A structured 5-stage approach that transforms raw lead data into targeted outreach, smarter decisions, and sales growth.
-        </p>
+          <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+            A structured 5-stage approach that transforms raw lead data into targeted outreach, smarter decisions, and sales growth.
+          </p>
 
-        {/* ================= MOBILE CARDS ================= */}
-        <div className="sm:hidden flex flex-col gap-4 mb-12">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl border-l-4 shadow-sm p-5 flex gap-3"
-              style={{ borderColor: step.barColor }}
-            >
-              <div
-                className="w-11 h-11 rounded-full flex items-center justify-center"
-                style={{ background: `${step.barColor}20` }}
-              >
-                <img src={step.icon} className="w-11 h-11" />
-              </div>
-
-              <div className="flex-1">
-                <p
-                  className="text-xs font-bold tracking-widest uppercase mb-1"
-                  style={{ color: step.barColor }}
+          {/* ── TAB NAV ── */}
+          <div className="relative mb-10 overflow-x-auto">
+            <div className="flex min-w-max sm:min-w-0 border-b border-gray-200">
+              {tabs.map((tab, index) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(index)}
+                  className={`
+                    relative flex-1 text-center py-3 px-3 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 whitespace-nowrap
+                    ${activeTab === index
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground/70"
+                    }
+                  `}
                 >
-                  {step.title}
-                </p>
+                  {tab.title}
 
-                <h3 className="text-sm font-bold leading-snug mb-1">
-                  {step.heading}
-                </h3>
-
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-
-              <span className="text-sm text-muted-foreground/40">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+                  {activeTab === index && (
+                    <motion.div
+                      layoutId="tab-underline"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#72339F]"
+                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                    />
+                  )}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* ================= DESKTOP TIMELINE ================= */}
-        <div className="hidden sm:flex flex-col gap-10">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative flex flex-col sm:flex-row items-start gap-4"
-            >
-
-              {/* Step Shape + Icon */}
-              <div className="relative flex items-center">
-                <div className="relative">
-                  <img src={step.shape} className="h-10 sm:h-14 w-auto" />
-
-                  <span className="absolute inset-0 flex items-center justify-center text-white font-sora text-sm font-semibold">
-                    {step.title}
-                  </span>
+          {/* ── TAB CONTENT ── */}
+          <div className="relative min-h-[420px] sm:min-h-[380px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center"
+              >
+                {/* Left – Illustration */}
+                <div className="flex items-center justify-center mt-8">
+                  <img
+                    src={tabs[activeTab].image}
+                    alt={tabs[activeTab].heading}
+                    className="w-full max-w-[360px] sm:max-w-[420px] h-auto object-contain drop-shadow-xl"
+                  />
                 </div>
 
-                <img
-                  src={step.icon}
-                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white shadow-md p-2 sm:p-3 sm:absolute sm:-left-8"
-                />
-              </div>
+                {/* Right – Text */}
+                <div className="flex flex-col gap-4 mt-8">
+                  <span className="inline-flex w-fit items-center px-4 py-1.5 rounded-full bg-[#72339F] text-white text-xs font-semibold tracking-wide">
+                    {tabs[activeTab].badge}
+                  </span>
 
-              {/* Connector Line */}
-              <img src={step.line} className="hidden sm:block h-1 w-32 -ml-6 mt-6" />
+                  <h3 className="font-sora text-3xl sm:text-4xl font-bold text-foreground leading-tight">
+                    {tabs[activeTab].heading}
+                  </h3>
 
-              {/* Text */}
-              <div className="relative sm:pl-10">
-                <img
-                  src={step.bar}
-                  className="hidden sm:block absolute left-0 top-1 w-[6px] h-[56px]"
-                />
+                  <p className="text-muted-foreground text-base leading-relaxed max-w-md">
+                    {tabs[activeTab].desc}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-                <h3 className="font-bold text-lg sm:text-xl text-center sm:text-left">
-                  {step.heading}
-                </h3>
+          <AnalyticsSection />
 
-                <p className="text-muted-foreground text-sm sm:text-base mt-1 max-w-sm text-center sm:text-left">
-                  {step.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          {/* Stats Grid */}
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"> */}
+            {/* {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="font-sora bg-card rounded-2xl p-6 border-2 border-[#72339F] text-center shadow-[0_8px_24px_rgba(114,51,159,0.15)]"
+              >
+                <div className="w-10 h-10 bg-[#72339F] rounded-xl mx-auto mb-4 flex items-center justify-center">
+                  <img src={stat.icon} className="w-12 h-12 object-contain" />
+                </div>
+
+                <div className="font-sora text-3xl font-bold text-foreground mb-1">
+                  <CountUp value={stat.value} />
+                </div>
+
+                <div className="font-sora text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))} */}
+          {/* </div> */}
+
         </div>
-
-        <AnalyticsSection />
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="font-sora bg-card rounded-2xl p-6 border-2 border-[#72339F] text-center shadow-[0_8px_24px_rgba(114,51,159,0.15)]"
-            >
-              <div className="w-10 h-10 bg-[#72339F] rounded-xl mx-auto mb-4 flex items-center justify-center">
-                <img src={stat.icon} className="w-12 h-12 object-contain" />
-              </div>
-
-              <div className="font-sora text-3xl font-bold text-foreground mb-1">
-                <CountUp value={stat.value} />
-              </div>
-
-              <div className="font-sora text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
+
 export default DataToRevenueSection;

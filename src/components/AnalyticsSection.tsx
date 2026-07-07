@@ -3,7 +3,7 @@ import InDepthMonitoringIcon from "@/assets/in-depth-monitoring.svg";
 
 const AnalyticsSection = () => {
   return (
-    <section className="pt-24 pb-20 bg-background">
+    <section className="pt-12 pb-8 bg-background">
       <div className="container mx-auto px-4">
         {/* Badge */}
         <div className="flex justify-center mb-8">
@@ -16,7 +16,7 @@ const AnalyticsSection = () => {
           <br />
           Analytics
         </h2>
-        <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-16">
+        <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-10">
           All the generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
         </p>
 

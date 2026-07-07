@@ -1,10 +1,10 @@
 // import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
-import FeatureImg1 from "@/assets/img1.gif";
+import FeatureImg1 from "@/assets/credits-allocation.mp4";
 import FeatureImg2 from "@/assets/img2.gif";
-import FeatureImg3 from "@/assets/img3.gif";
-import FeatureImg4 from "@/assets/img4.gif";
+import FeatureImg3 from "@/assets/contact-video.mp4";
+import FeatureImg4 from "@/assets/chrome-extension.mp4";
 
 
 const features = [
@@ -21,7 +21,7 @@ const features = [
   },
   {
     badge: "Lead Recommendation",
-    title: "AI Lead Recommendations",
+    title: "ICP Building",
     image: FeatureImg2,
     points: [
       "Smart, activity-based suggestions",
@@ -77,11 +77,26 @@ const FeaturesSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="bg-white rounded-2xl border-2 border-[#72339F]/30 shadow-[0_10px_30px_rgba(114,51,159,0.15)] hover:border-[#72339F] p-4">
-                  <img
-                    src={feature.image}   // 👈 replace with your actual image path
-                    alt={feature.title}
-                    className="max-w-full max-h-full object-contain rounded-xl"
-                  />
+                  {typeof feature.image === "string" && feature.image.endsWith(".mp4") ? (
+                    <video
+                      src={feature.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      disablePictureInPicture
+                      controls={false}
+                      onEnded={(event) => event.currentTarget.play()}
+                      className="max-w-full max-h-full object-contain rounded-xl"
+                    />
+                  ) : (
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="max-w-full max-h-full object-contain rounded-xl"
+                    />
+                  )}
                 </div>
 
               </motion.div>
