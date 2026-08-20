@@ -217,9 +217,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* CTA */}
+          {/* Compare */}
           <div>
-            <h4 className="font-sora font-semibold text-black text-base sm:text-lg leading-none">Lets Try out</h4>
+            <h4 className="font-sora font-semibold text-black text-base sm:text-lg leading-none">
+              Compare with EasyLeadz
+            </h4>
             <div className="relative mt-3 h-[3px] w-full overflow-hidden rounded-full">
                 <motion.div
                   className="absolute top-0 left-0 h-full w-1/4 rounded-full bg-gradient-to-r from-[#470277] to-[#0B87BA]"
@@ -227,28 +229,25 @@ const Footer = () => {
                   transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
                 />
               </div>
-            <a
-              href="https://chromewebstore.google.com/detail/observenowai-linkedin-pro/pkoknghbccdigldobkjndnbjoagajahi"
-              className="mt-4 inline-flex items-center gap-3 
-    bg-white text-black 
-    px-3 py-1 
-    rounded-xl 
-    text-sm font-medium 
-    border border-black/20 
-    transition-all duration-200
-    hover:border-[#470277]
-    hover:shadow-[0_6px_20px_rgba(71,2,119,0.15)]"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png"
-                alt="Chrome"
-                className="w-6 h-6"
-              />
-              <span className="leading-tight">
-    <span className="block text-xs text-black/70">Get it on</span>
-    <span className="block font-semibold text-sm">Chrome Store</span>
-  </span>
-            </a>
+            <ul className="space-y-3 text-black/70 text-sm mt-4">
+              <li>
+                <Link to="/compare/easyleadz" className="hover:text-black transition-colors">
+                  ObserveNow.AI vs EasyLeadz
+                </Link>
+              </li>
+              <li><Link to="/compare/rocketreach" className="hover:text-black transition-colors">
+                  ObserveNow.AI vs RocketReach
+                </Link></li>
+              <li><Link to="/compare/kaspr" className="hover:text-black transition-colors">
+                  ObserveNow.AI vs Kaspr
+                </Link></li>
+              <li><Link to="/compare/signalhire" className="hover:text-black transition-colors">
+                  ObserveNow.AI vs SignalHire
+                </Link></li>
+              <li><Link to="/compare/hunter" className="hover:text-black transition-colors">
+                  ObserveNow.AI vs Hunter.io
+                </Link></li>
+            </ul>
           </div>
         </div>
 

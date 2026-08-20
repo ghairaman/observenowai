@@ -61,12 +61,12 @@ const ScreenshotCard = ({
   disableHover = false,
 }: ScreenshotCardProps) => (
   <div
-    className={`group overflow-hidden rounded-[24px] border border-[#2b1d3d]/15 bg-white shadow-[0_18px_50px_rgba(38,21,63,0.14)] transition-all duration-300 ${!disableHover ? 'hover:border-[#72339F]/60 hover:shadow-[0_22px_60px_rgba(114,51,159,0.16)]' : ''} ${className}`}
+    className={`group overflow-hidden rounded-[24px] border border-[#2b1d3d]/15 bg-white p-4 shadow-[0_18px_50px_rgba(38,21,63,0.14)] transition-all duration-300 ${!disableHover ? 'hover:border-[#72339F]/60 hover:shadow-[0_22px_60px_rgba(114,51,159,0.16)]' : ''} ${className}`}
   >
     <img
       src={src}
       alt={alt}
-      className={`h-full w-full object-cover ${!disableHover ? 'transition-transform duration-300 group-hover:scale-[1.02]' : ''} ${imageClassName}`}
+      className={`h-full w-full object-contain ${!disableHover ? 'transition-transform duration-300 group-hover:scale-[1.02]' : ''} ${imageClassName}`}
     />
   </div>
 );
@@ -198,13 +198,13 @@ export const ProductDiscoverySection = () => {
 
 export const ProductRepositorySection = () => {
   return (
-    <section className="bg-[#f5edf9] py-16 sm:py-20">
+    <section className="bg-[#f5edf9] py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-10 mt-0"
+          className="flex justify-center mb-8 mt-0"
         >
           <span className="section-badge border border-[#470277]">
             Contact Management
@@ -212,7 +212,7 @@ export const ProductRepositorySection = () => {
         </motion.div>
       </div>
 
-      <div className="container mx-auto grid items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="container mx-auto grid items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr]">
 
         <ScreenshotCard
           src={contactRepositoryImage}
@@ -221,17 +221,17 @@ export const ProductRepositorySection = () => {
           imageClassName="object-contain"
         />
 
-        <div className="-mt-8">
+        <div className="-mt-6">
 
           <h2 className="font-sora text-3xl font-bold leading-tight text-[#17111d] sm:text-4xl md:text-[48px]">
             Your Central Contact{" "}
             <span className="violet-gradient-text">Repository</span>
           </h2>
-          <p className="mt-4 max-w-xl text-sm leading-6 text-[#625a6c] sm:text-base">
+          <p className="mt-3 max-w-xl text-sm leading-6 text-[#625a6c] sm:text-base">
             Access, manage, and export all your enriched contacts from one place.
           </p>
 
-          <div className="mt-8 space-y-5">
+          <div className="mt-6 space-y-6">
             {[
               {
                 title: "Auto-Save Contacts",
@@ -249,7 +249,7 @@ export const ProductRepositorySection = () => {
                   "Easily move your structured data into CRM or outreach tools without any extra formatting.",
               },
             ].map((item, index) => (
-              <div key={item.title} className="flex gap-4">
+              <div key={item.title} className="flex gap-5">
                 <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#d2c0e3] bg-white text-sm font-semibold text-[#72339F]">
                   {index + 1}
                 </div>
@@ -268,7 +268,7 @@ export const ProductRepositorySection = () => {
 
 export const ProductCapabilitiesSection = () => {
   return (
-    <section className="bg-white py-12 sm:py-20">
+    <section className="bg-white py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6">
          {/* Badge */}
         <motion.div
@@ -288,11 +288,11 @@ export const ProductCapabilitiesSection = () => {
           description="From enriching raw data to organizing, structuring, and analyzing it, ObserveNow.AI gives you complete control over your data pipeline."
         />
 
-        <div className="mt-14 space-y-20">
+        <div className="mt-20 space-y-32">
           {platformFeatureRows.map((row) => (
             <div
               key={row.title}
-              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-14 ${
+              className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-24 ${
                 row.imageLeft ? "" : "lg:[&>*:first-child]:order-2"
               }`}
             >
