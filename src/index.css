@@ -112,6 +112,31 @@
   }
 }
 
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
 @layer components {
   .section-badge {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium;
