@@ -1,6 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import GridPattern from "@/assets/white-grid.svg";
 import {
   contactDiscoveryCards,
   contactRepositoryImage,
@@ -8,7 +9,6 @@ import {
   creditImage,
   heroVideo,
   platformFeatureRows,
-  productLogos,
   profileCards,
   teamCards,
   teamImage,
@@ -43,7 +43,7 @@ const SectionHeader = ({
       </span> */}
       
     </div>
-    <h2 className="font-sora text-3xl font-bold leading-tight text-[#151018] sm:text-4xl md:text-5xl">
+    <h2 className="font-sora text-3xl font-bold leading-[1.18] text-[#151018] sm:text-4xl md:text-5xl md:leading-[1.15]">
       {title}{" "}
       {highlight ? <span className="violet-gradient-text">{highlight}</span> : null}
     </h2>
@@ -86,28 +86,41 @@ const BulletList = ({ items }: { items: string[] }) => (
 
 export const ProductHeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fbf8ff_0%,#f4ebfb_52%,#ffffff_100%)] pt-32 sm:pt-36">
-      <div className="pointer-events-none absolute inset-x-0 top-14 h-[420px] bg-[radial-gradient(circle_at_top,rgba(114,51,159,0.16),rgba(114,51,159,0)_65%)]" />
+    <section className="relative overflow-hidden bg-white pt-28 sm:pt-32">
+      <div className="absolute inset-x-0 top-0 h-[500px] overflow-hidden gradient-hero-bg bg-[#470277]/5 sm:h-[540px]">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center translate-y-48">
+          <div
+            className="hidden sm:block w-[900px] h-[500px] rounded-full blur-[50px] opacity-100"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(71,2,119,0.35) 0%, rgba(71,2,119,0.18) 35%, rgba(71,2,119,0.08) 55%, rgba(71,2,119,0) 70%)",
+            }}
+          />
+        </div>
 
-      <div className="container mx-auto px-4 sm:px-6">
+        {/* White grid pattern overlay */}
+        <img
+          src={GridPattern}
+          alt=""
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
+        
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8 mt-10"
-        >
+        <div className="mb-3 flex justify-center">
           <span className="section-badge border border-[#470277]">
             Product Overview
           </span>
-        </motion.div>
+        </div>
         <SectionHeader
           title="Turn Buyers Signals Into"
           highlight="Revenue"
           description="ObserveNow.AI helps you identify high-intent prospects, access verified contacts, and act on real-time signals so your team closes deals faster."
         />
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-5 flex justify-center">
           <Button
             asChild
             className="btn-gradient text-primary-foreground shadow-violet"
@@ -122,7 +135,7 @@ export const ProductHeroSection = () => {
           </Button>
         </div>
 
-        <div className="mx-auto mt-12 max-w-6xl overflow-hidden rounded-[24px] border border-[#2b1d3d]/15 bg-white shadow-[0_18px_50px_rgba(38,21,63,0.14)] pb-8">
+        <div className="mx-auto mt-7 max-w-6xl overflow-hidden rounded-[24px] border border-[#2b1d3d]/15 bg-white shadow-[0_18px_50px_rgba(38,21,63,0.14)]">
           <video
             src={heroVideo}
             className="h-full w-full object-cover"
@@ -134,20 +147,6 @@ export const ProductHeroSection = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 items-center gap-8 border-b border-[#e8deef] py-8 sm:grid-cols-3 lg:grid-cols-5">
-          {productLogos.map((logo) => (
-            <div
-              key={`${logo.alt}-${logo.src}`}
-              className="flex items-center justify-center"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-6 w-auto object-contain opacity-90 sm:h-8"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -223,7 +222,7 @@ export const ProductRepositorySection = () => {
 
         <div className="-mt-6">
 
-          <h2 className="font-sora text-3xl font-bold leading-tight text-[#17111d] sm:text-4xl md:text-[48px]">
+          <h2 className="font-sora text-3xl font-bold leading-[1.2] text-[#17111d] sm:text-4xl md:text-[48px] md:leading-[1.18]">
             Your Central Contact{" "}
             <span className="violet-gradient-text">Repository</span>
           </h2>
@@ -429,7 +428,7 @@ export const ProductCreditsSection = () => {
           </div>
 
           <div>
-            <h2 className="font-sora text-3xl font-bold leading-tight text-[#17111d] sm:text-4xl md:text-[48px]">
+            <h2 className="font-sora text-3xl font-bold leading-[1.2] text-[#17111d] sm:text-4xl md:text-[48px] md:leading-[1.18]">
               Your Central Credit{" "}
               <span className="violet-gradient-text">Control System</span>
             </h2>
