@@ -17,8 +17,13 @@ import CookiePage from "./pages/Cookie";
 import DisclaimerPage from "./pages/Disclaimer";
 import BlogsPage from "./pages/Blogs-page";
 import BlogDetailPage from "./pages/BlogDetail-page";
+import CompareEaslyLeadz from "./pages/CompareEaslyLeadz";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import CompareRocketReach from "./pages/CompareRocketReach";
+import CompareKaspr from "./pages/CompareKaspr";
+import CompareSignalHire from "./pages/CompareSignalHire";
+import CompareHunter from "./pages/CompareHunter";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +42,11 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/compare/easyleadz" element={<CompareEaslyLeadz />} />
+            <Route path="/compare/rocketreach" element={<CompareRocketReach />} />
+            <Route path="/compare/kaspr" element={<CompareKaspr />} />
+            <Route path="/compare/signalhire" element={<CompareSignalHire />} />
+            <Route path="/compare/hunter" element={<CompareHunter />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:slug" element={<BlogDetailPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
