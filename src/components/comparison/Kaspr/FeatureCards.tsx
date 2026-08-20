@@ -1,5 +1,4 @@
 import { ArrowDownRight, Phone, Star, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
 
 const cards = [
   {
