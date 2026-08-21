@@ -127,12 +127,12 @@ const CoreValues = () => {
               </div>
 
               {/* Text */}
-              <div className="mt-0 sm:mt-[-110px] ml-0 sm:ml-[70px] text-left max-w-[220px]">
+              <div className="mt-0 sm:mt-[-110px] ml-0 sm:ml-[110px] text-left max-w-[220px]">
                 <h3 className="text-sm sm:text-[12px] font-semibold text-foreground mb-1">
                   {value.title}
                 </h3>
 
-                <p className="text-xs sm:text-[10px] text-muted-foreground text-justify leading-[1.6]">
+                <p className="text-xs sm:text-[10px] text-muted-foreground text-left leading-[1.6]">
                   {value.description}
                 </p>
               </div>

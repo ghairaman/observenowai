@@ -119,7 +119,7 @@ const TeamSection = () => {
            </h3>
 
            <p className="text-white/80 max-w-2xl text-center mx-auto text-sm mb-6">
-             Try ObserveNow free and access verified contacts, intelligent filters, and real-time insights in minutes.
+             Try ObserveNow.AI free and access verified contacts, intelligent filters, and real-time insights in minutes.
            </p>
           <div className="flex justify-center">
            <Button 
