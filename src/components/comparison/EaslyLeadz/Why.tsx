@@ -1,4 +1,4 @@
-import { Globe, Target, Phone, Linkedin } from "lucide-react";
+import { Globe, Target, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 type SectionHeaderProps = {

@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Crown, Sparkles, X } from "lucide-react";
+import { Check, Crown, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
