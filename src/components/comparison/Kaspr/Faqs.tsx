@@ -10,7 +10,7 @@ import { NavLink } from "../../NavLink";
 const faqs = [
   {
     question: "Is ObserveNow.AI a good alternative to Kaspr?",
-    answer: "Yes. ObserveNow.AI offers 91% phone accuracy at $9 for 250 credits vs Kaspr's $49+/month. ObserveNow.AI also provides 100% credit refund for wrong numbers and has a 4.9/5 Chrome Web Store rating vs Kaspr's 4.5/5. ",
+    answer: "Yes. ObserveNow.AI offers 91% phone accuracy at $20 for 250 credits vs Kaspr's $69+/month. ObserveNow.AI also has a 4.9/5 Chrome Web Store rating vs Kaspr's 4.5/5. ",
   },
   {
     question: "Does Kaspr have better LinkedIn features than ObserveNow.AI?",
@@ -18,11 +18,7 @@ const faqs = [
   },
   {
     question: "How much can I save switching from Kaspr to ObserveNow.AI?",
-    answer: "Kaspr costs $49/month billed annually ($588/year). ObserveNow.AI's pay-per-use model at $9/250 credits means you could save 80%+ depending on usage. With ObserveNow.AI's refund guarantee, your effective cost per accurate contact is even lower. ",
-  },
-  {
-    question: "Does Kaspr refund credits for wrong phone numbers?",
-    answer: " No. Kaspr does not offer credit refunds for inaccurate data. ObserveNow.AI provides 100% credit refund for any wrong phone numbers, ensuring you only pay for accurate contacts that you can actually reach. ",
+    answer: "Kaspr costs $69/month billed annually ($828/year). ObserveNow.AI's pay-per-use model at $20/250 credits means you could save more depending on usage. ",
   },
 ];
 
@@ -115,41 +111,6 @@ const Faqs = () => {
             </AccordionItem>
           ))}
         </Accordion>
-       
-        {/* CTA */}
-        <div className="relative max-w-5xl mx-auto rounded-[28px] bg-[#7C4DA6] text-white px-10 py-12 overflow-hidden mt-16">
-          <motion.div className="absolute -top-4 left-48 w-[110px] h-[110px] bg-white/10 rounded-full"
-           animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div className="absolute -top-2 -right-12 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
-
-          <motion.div className="absolute -bottom-12 right-1 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
-
-          <motion.div className="absolute -bottom-12 -left-9 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}/>
-          
-
-          <h3 className="font-sora text-2xl md:text-3xl font-semibold mb-2">
-            Smarter Prospecting Starts Here
-          </h3>
-
-          <p className="font-sora text-white/80 max-w-2xl mx-auto text-sm mb-6">
-            Try ObserveNow.AI free and access verified contacts, intelligent filters, and real-time insights in minutes.
-          </p>
-
-         <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-base font-semibold group shadow-lg"
-            >
-              <a href="https://dashboard.observenow.ai/login" className="flex items-center gap-2">
-              GET STARTED
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-        </div>
 
       </div>
     </section>

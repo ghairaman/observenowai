@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 
 const rows = [
-  ["Starting Price", "$9 for 250 credits", "$53/mo (billed annually)"],
+  ["Starting Price", "$20/mo", "$46/mo (billed annually)"],
   ["Phone Number Accuracy", "91% Verified", "~70-80% reported"],
-  ["Credit Refund Policy", "100% credits back for wrong numbers", "No refund on used lookups"],
   ["Chrome Extension", "Yes – Instant Results", "Yes"],
-  ["Free Trial", "5 free credits on signup", "5 free lookups/month"],
+  ["Free Trial", "20 free credits on signup", "5 free lookups/month"],
   ["Phone Discovery Speed", "10 seconds", "~10-20 seconds"],
   ["Database Size", "LinkedIn profile-based", "700M+ profiles"],
   ["Email Finder", "Yes", "Yes"],
   ["GDPR Compliant", "Yes", "Yes"],
   ["Pay–Per–Use Option", "Yes – no subscription needed", "No – monthly subscription required"],
-  ["Chrome Web Store Rating", "4.9/5 (1000+ reviews)", "4.2/5"],
-  ["Director/C-Level Contacts", "Yes – dedicated Director Phone feature", "Yes"],
+  ["Chrome Web Store Rating", "4.9/5", "4.2/5"],
+  ["C-Level Contacts", "Yes", "Yes"],
   ["Ease of Setup", "2 minutes – Chrome Extension", "Account setup + learning curve"],
 ];
 
@@ -60,16 +59,18 @@ const FeatureComparison = () => {
           </div>
 
           <div className="divide-y divide-slate-200 bg-white text-sm text-slate-700">
-            {rows.map(([feature, ours, theirs], index) => (
-              <div
+            {rows.map(([feature, ours, theirs], index) => {
+              const answersMatch = ours === theirs;
+
+              return <div
                 key={feature}
                 className={`grid grid-cols-3 items-center gap-4 px-6 py-5 sm:px-8 ${index % 2 === 0 ? "bg-slate-50/80" : "bg-white"}`}
               >
                 <div className="font-semibold text-slate-900 text-left">{feature}</div>
-                <div className="text-emerald-600 font-medium text-left">{ours}</div>
-                <div className="text-slate-600 text-left pt-2">{theirs}</div>
+                <div className={`${answersMatch ? "text-slate-400" : "text-emerald-600"} font-medium text-left`}>{ours}</div>
+                <div className={`${answersMatch ? "text-slate-400" : "text-slate-600"} text-left pt-2`}>{theirs}</div>
               </div>
-            ))}
+            })}
           </div>
         </div>
       </div>

@@ -33,15 +33,15 @@ const SectionHeader = ({ title, highlight, secondary, description }: SectionHead
 const contactDiscoveryCards = [
   {
     icon: DollarSign,
-    title: "5x More Affordable",
+    title: "2.5x More Affordable",
     description:
-      "Kaspr starts at $49/month billed annually. ObserveNow.AI starts at just $9 for 250 credits with no subscription required. Buy credits only when you need them.",
+      "Kaspr starts at $69/month billed annually. ObserveNow.AI starts at just $20 for 250 credits. Buy credits only when you need them.",
   },
   {
     icon: Target,
-    title: "Higher Accuracy + Refund",
+    title: "Higher Accuracy",
     description:
-      "ObserveNow.AI guarantees 91% phone accuracy and refunds 100% of credits for wrong numbers. Kaspr reports 70-80% accuracy with no refund policy. Your cost per accurate contact is much lower.",
+      "ObserveNow.AI guarantees 91% phone accuracy. Kaspr reports 70-80% accuracy. Your cost per accurate contact is much lower.",
   },
   {
     icon: Star,

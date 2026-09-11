@@ -1,4 +1,4 @@
-import { Globe, Target, Phone } from "lucide-react";
+import { Globe, Target, Phone, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 type SectionHeaderProps = {
@@ -39,15 +39,15 @@ const contactDiscoveryCards = [
   },
   {
     icon: Target,
-    title: "91% Accuracy + Refund",
+    title: "91% Accuracy",
     description:
-      "ObserveNow.AI guarantees 91% phone accuracy with 100% credit refund for wrong numbers. EasyLeadz users report 60-70% accuracy with limited refund options.",
+      "ObserveNow.AI guarantees 91% phone accuracy. EasyLeadz users report 60-70% accuracy. That means fewer wrong numbers, fewer wasted calls, and more conversations with the right prospects.",
   },
   {
-    icon: Phone,
-    title: "Director Phone + MSME",
+    icon: Linkedin,
+    title: "LinkedIn-Native Discovery",
     description:
-      "ObserveNow.AI offers dedicated Director Phone finder for C-level contacts, plus a free MSME directory with 1M+ Indian businesses. Features EasyLeadz doesn't have.",
+      "ObserveNow.AI works directly on LinkedIn profile pages. See a prospect? Click the extension and get their phone number in 10 seconds. No domain searches needed.",
   },
 ];
 

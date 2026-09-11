@@ -9,24 +9,16 @@ import { NavLink } from "../../NavLink";
 
 const faqs = [
   {
-    question: "What does my subscription include?",
-    answer: "Your plan gives you access to verified CXO contacts, AI-powered lead recommendations, account list enrichment, and seamless integration features.",
+    question: "Is ObserveNow.AI a good alternative to SignalHire?",
+    answer: "Yes. ObserveNow.AI offers 91% phone number accuracy at just $20 for 250 credits, compared to SignalHire's $99/month. ObserveNow.AI also has a higher Chrome Web Store rating (4.9/5 vs 4.6/5).",
   },
   {
-    question: "How often is the data updated?",
-    answer: "Our data is continuously verified and updated to ensure accuracy. We run regular enrichment cycles to keep contact details, job roles, and company data current.",
+    question: "How does ObserveNow.AI compare to SignalHire for phone numbers?",
+    answer: "ObserveNow.AI focuses specifically on phone number accuracy with a 91% guarantee. SignalHire offers broader multi-platform coverage but at a higher price point. If phone numbers from LinkedIn are your priority, ObserveNow.AI delivers better value.",
   },
   {
-    question: "Can I upgrade or downgrade my plan later?",
-    answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.",
-  },
-  {
-    question: "Do you offer a free trial?",
-    answer: "Yes! We offer a 7-day free trial with 20 credits so you can experience ObserveNow with no commitment and no credit card required.",
-  },
-  {
-    question: "How secure is my data?",
-    answer: "We take data security seriously. All data is encrypted in transit and at rest, and we follow industry-standard security practices to protect your information.",
+    question: "How much can I save switching from Kaspr to ObserveNow.AI?",
+    answer: "SignalHire costs $99/month billed annually. ObserveNow.AI's pay-per-use model at $20/250 credits means you could save more depending on usage. ",
   },
 ];
 
@@ -119,41 +111,6 @@ const Faqs = () => {
             </AccordionItem>
           ))}
         </Accordion>
-       
-        {/* CTA */}
-        <div className="relative max-w-5xl mx-auto rounded-[28px] bg-[#7C4DA6] text-white px-10 py-12 overflow-hidden mt-16">
-          <motion.div className="absolute -top-4 left-48 w-[110px] h-[110px] bg-white/10 rounded-full"
-           animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div className="absolute -top-2 -right-12 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
-
-          <motion.div className="absolute -bottom-12 right-1 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
-
-          <motion.div className="absolute -bottom-12 -left-9 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}/>
-          
-
-          <h3 className="font-sora text-2xl md:text-3xl font-semibold mb-2">
-            Smarter Prospecting Starts Here
-          </h3>
-
-          <p className="font-sora text-white/80 max-w-2xl mx-auto text-sm mb-6">
-            Try ObserveNow.AI free and access verified contacts, intelligent filters, and real-time insights in minutes.
-          </p>
-
-         <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-base font-semibold group shadow-lg"
-            >
-              <a href="https://dashboard.observenow.ai/login" className="flex items-center gap-2">
-              GET STARTED
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-        </div>
 
       </div>
     </section>

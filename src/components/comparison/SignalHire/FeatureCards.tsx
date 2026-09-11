@@ -1,10 +1,10 @@
-import { ArrowDownRight, Phone, Star, ShieldCheck } from "lucide-react";
+import { ArrowDownRight, Phone, Star } from "lucide-react";
 
 const cards = [
   {
     icon: ArrowDownRight,
-    title: "6x",
-    subtitle: "Cheaper than RocketReach",
+    title: "5x",
+    subtitle: "Cheaper than SignalHire",
   },
   {
     icon: Phone,
@@ -16,17 +16,12 @@ const cards = [
     title: "4.9/5",
     subtitle: "Chrome Store Rating",
   },
-  {
-    icon: ShieldCheck,
-    title: "100%",
-    subtitle: "Wrong Number Refund",
-  },
 ];
 
 const FeatureCards = () => {
   return (
     <section className="py-20 md:py-28 bg-background">
-      <div className="font-dm max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="font-dm max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {cards.map((card) => {
           const Icon = card.icon;
           return (

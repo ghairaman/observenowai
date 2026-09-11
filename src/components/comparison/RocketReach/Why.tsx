@@ -35,13 +35,13 @@ const contactDiscoveryCards = [
     icon: DollarSign,
     title: "80%+ Cost Savings",
     description:
-      "RocketReach starts at $53/month ($636/year). ObserveNow.AI starts at just $9. For LinkedIn-focused prospecting, you save significantly with ObserveNow.AI.",
+      "RocketReach starts at $46/month ($636/year). ObserveNow.AI starts at just $20/month. For LinkedIn-focused prospecting, you save significantly with ObserveNow.AI.",
   },
   {
     icon: Target,
-    title: "91% Accuracy + Refund",
+    title: "91% Accuracy",
     description:
-      "ObserveNow.AI guarantees 91% phone accuracy with 100% credit refund for wrong numbers. RocketReach users report 60-70% accuracy with limited refund options.",
+      "ObserveNow.AI guarantees 91% phone accuracy. RocketReach users report 60-70% accuracy. That means fewer wrong numbers, fewer wasted calls, and more conversations with the right prospects.",
   },
   {
     icon: Star,

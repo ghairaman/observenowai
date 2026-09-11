@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
 
 const rows = [
-  ["Starting Price", "$9 for 250 credits", "$49/mo (50 searches)"],
-  ["Phone Number Finder", "91% Verified", "No — email only"],
+  ["Starting Price", "$20 for 250 credits", "$34/mo "],
+  ["Phone Number Finder", "Yes - 91% Verified", "No — email only"],
   ["Email Finder", "Yes", "Yes — core feature"],
-  ["Credit Refund Policy", "100% credits back for wrong numbers", "No refund on used searches"],
   ["Chrome Extension", "Yes — works on LinkedIn", "Yes — works on websites"],
-  ["Free Trial", "5 free credits on signup", "25 free searches/month"],
-  ["Domain Search", "No", "Yes — find all email at a company"],
-  ["Email Verification", "Basic verification", "Advanced email verification included"],
+  ["Free Trial", "20 free credits (Phone + Email)", "25 free searches/month (Email only)"],
+  ["Email Verification", "91% Accurate", "Advanced email verification included"],
   ["LinkedIn Integration", "Native — works on profile pages", "Limited LinkedIn support"],
-  ["Pay–Per–Use Option", "Yes — no subscription needed", "No — monthly subscription required"],
+  ["Pay–Per–Use Option", "Yes", "No — monthly subscription required"],
   ["Direct Dial Numbers", "Yes — primary feature", "No"],
-  ["Chrome Web Store Rating", "4.9/5 (1000+ reviews)", "4.5/5"],
+  ["Chrome Web Store Rating", "4.9/5", "4.7/5"],
   ["GDPR Compliant", "Yes", "Yes"],
 ];
 
@@ -60,16 +58,18 @@ const FeatureComparison = () => {
           </div>
 
           <div className="divide-y divide-slate-200 bg-white text-sm text-slate-700">
-            {rows.map(([feature, ours, theirs], index) => (
-              <div
+            {rows.map(([feature, ours, theirs], index) => {
+              const answersMatch = ours === theirs;
+
+              return <div
                 key={feature}
                 className={`grid grid-cols-3 items-center gap-4 px-6 py-5 sm:px-8 ${index % 2 === 0 ? "bg-slate-50/80" : "bg-white"}`}
               >
                 <div className="font-semibold text-slate-900 text-left">{feature}</div>
-                <div className="text-emerald-600 font-medium text-left">{ours}</div>
-                <div className="text-slate-600 text-left pt-2">{theirs}</div>
+                <div className={`${answersMatch ? "text-slate-400" : "text-emerald-600"} font-medium text-left`}>{ours}</div>
+                <div className={`${answersMatch ? "text-slate-400" : "text-slate-600"} text-left pt-2`}>{theirs}</div>
               </div>
-            ))}
+            })}
           </div>
         </div>
       </div>

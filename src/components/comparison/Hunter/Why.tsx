@@ -47,7 +47,7 @@ const contactDiscoveryCards = [
     icon: DollarSign,
     title: "More Affordable",
     description:
-      "ObserveNow.AI starts at $9 for 250 credits. Hunter.io starts at $49/month. Get phone numbers AND emails for less than what Hunter charges for emails alone.",
+      "ObserveNow.AI starts at $20 for 250 credits. Hunter.io starts at $34/month. Get phone numbers AND emails for less than what Hunter charges for emails alone.",
   },
 ];
 

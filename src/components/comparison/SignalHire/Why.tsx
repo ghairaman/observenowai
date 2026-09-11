@@ -1,4 +1,4 @@
-import { DollarSign, Target, Star } from "lucide-react";
+import { DollarSign, Star, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 type SectionHeaderProps = {
@@ -33,21 +33,21 @@ const SectionHeader = ({ title, highlight, secondary, description }: SectionHead
 const contactDiscoveryCards = [
   {
     icon: DollarSign,
-    title: "Pay Per Use — No Subscription",
+    title: "5x More Affordable",
     description:
-      "SignalHire requires a $49/month subscription. ObserveNow.AI lets you buy credits as needed starting at just $9. No commitment, no wasted budget on unused credits.",
-  },
-  {
-    icon: Target,
-    title: "100% Refund for Wrong Numbers",
-    description:
-      "Get 100% credits back for any wrong phone numbers. SignalHire charges credits even for incorrect data. With ObserveNow.AI, you only pay for numbers and emails that are accurate.",
+      "SignalHire starts at $99/month billed annually. ObserveNow.AI starts at just $20 for 250 credits. Buy credits only when you need them.",
   },
   {
     icon: Star,
+    title: "Simpler & Faster",
+    description:
+      "ObserveNow.AI focuses on what matters: finding accurate phone numbers fast. No complex workflows or setup required. Install the Chrome extension and start finding contacts in 2 minutes.",
+  },
+  {
+    icon: Phone,
     title: "Higher Phone Accuracy",
     description:
-      "ObserveNow.AI delivers 91% verified accuracy for phone numbers compared to SignalHire's reported 75-85%. Combined with the refund guarantee, your effective accuracy is close to 100%.",
+      "ObserveNow.AI delivers 91% verified accuracy for phone numbers compared to SignalHire's reported 75-85%.",
   },
 ];
 

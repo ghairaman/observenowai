@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     question: "Does ObserveNow.AI work outside India unlike EasyLeadz?",
-    answer: "Yes. While EasyLeadz is primarily focused on India, ObserveNow.AI provides global coverage. You can find phone numbers and emails for contacts in the US, Europe, Southeast Asia, Middle East, and more — all with the same 91% accuracy guarantee. ",
+    answer: "Yes. While EasyLeadz is primarily focused on India, ObserveNow.AI provides both India and global coverage. You can find phone numbers and emails for contacts in the US, Europe, Southeast Asia, Middle East, and more — all with the same 91% accuracy guarantee. ",
   },
   {
     question: "How does pricing compare between ObserveNow.AI and EasyLeadz?",
-    answer: " ObserveNow.AI starts at $9 for 250 credits with no subscription needed. EasyLeadz starts at $39/month. For light users, ObserveNow.AI is 4-5x more affordable. ObserveNow.AI's 100% credit refund for wrong numbers means you never pay for bad data.",
+    answer: " ObserveNow.AI starts at $20 for 250 credits. EasyLeadz starts at $30/month. For light users, ObserveNow.AI is 4-5x more affordable.",
   },
 ];
 
@@ -111,41 +111,6 @@ const Faqs = () => {
             </AccordionItem>
           ))}
         </Accordion>
-       
-        {/* CTA */}
-        <div className="relative max-w-5xl mx-auto rounded-[28px] bg-[#7C4DA6] text-white px-10 py-12 overflow-hidden mt-16">
-          <motion.div className="absolute -top-4 left-48 w-[110px] h-[110px] bg-white/10 rounded-full"
-           animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div className="absolute -top-2 -right-12 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
-
-          <motion.div className="absolute -bottom-12 right-1 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} />
-
-          <motion.div className="absolute -bottom-12 -left-9 w-[110px] h-[110px] bg-white/10 rounded-full" animate={{ y: [0, -10, 0], scale: [1, 1.05, 1] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}/>
-          
-
-          <h3 className="font-sora text-2xl md:text-3xl font-semibold mb-2">
-            Smarter Prospecting Starts Here
-          </h3>
-
-          <p className="font-sora text-white/80 max-w-2xl mx-auto text-sm mb-6">
-            Try ObserveNow.AI free and access verified contacts, intelligent filters, and real-time insights in minutes.
-          </p>
-
-         <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-base font-semibold group shadow-lg"
-            >
-              <a href="https://dashboard.observenow.ai/login" className="flex items-center gap-2">
-              GET STARTED
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-        </div>
 
       </div>
     </section>

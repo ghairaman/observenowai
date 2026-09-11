@@ -54,7 +54,7 @@ const HeroSection = () => {
         </motion.div>
 
         <p className="font-sora text-xs sm:text-sm text-muted-foreground text-base md:text-lg mb-8 max-w-3xl mx-auto text-center">
-          Looking for an Kaspr alternative? <span className="violet-gradient-text">ObserveNow.AI</span> offers 91% phone accuracy at a fraction of Kaspr's price, with 100% credit refund for wrong numbers. Compare features side-by-side.
+          Looking for an Kaspr alternative? <span className="violet-gradient-text">ObserveNow.AI</span> offers 91% phone accuracy at a fraction of Kaspr's price. Compare features side-by-side.
         </p>
 
          {/* CTA */}

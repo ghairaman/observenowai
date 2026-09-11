@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 
 const rows = [
-  ["Starting Price", "$9 for 250 credits", "$49/mo (billed annually)"],
+  ["Starting Price", "$20 for 250 credits", "$69/mo (billed annually)"],
   ["Phone Number Accuracy", "91% Verified", "~70-80% reported"],
-  ["Credit Refund Policy", "100% credits back for wrong numbers", "No refund on used credits"],
   ["Chrome Extension", "Yes – Instant Results", "Yes – LinkedIn focused"],
-  ["Free Trial", "5 free credits on signup", "5 phone credits/month free"],
+  ["Free Trial", "20 free credits on signup", "5 phone credits/month free"],
   ["Phone Discovery Speed", "10 seconds", "~10-15 seconds"],
   ["Email Finder", "Yes", "Yes"],
   ["LinkedIn Automation", "Contact discovery only", "LinkedIn workflows + sequences"],
   ["CRM Integration", "HubSpot, Google Sheets", "HubSpot, Salesforce, Pipedrive native"],
   ["Pay–Per–Use Option", "Yes – no subscription needed", "No – monthly subscription required"],
   ["Team Management", "Basic", "Advanced team features"],
-  ["Chrome Web Store Rating", "4.9/5 (1000+ reviews)", "4.2/5"],
+  ["Chrome Web Store Rating", "4.9/5", "4.7/5"],
   ["GDPR Compliant", "Yes", "Yes"],
 ];
 
@@ -60,16 +59,24 @@ const FeatureComparison = () => {
           </div>
 
           <div className="divide-y divide-slate-200 bg-white text-sm text-slate-700">
-            {rows.map(([feature, ours, theirs], index) => (
-              <div
+            {rows.map(([feature, ours, theirs], index) => {
+              const answersMatch = ours === theirs;
+              const greyMatchFeatures = new Set([
+                "LinkedIn Automation",
+                "CRM Integration",
+                "Team Management",
+              ]);
+              const shouldUseGrey = answersMatch || greyMatchFeatures.has(feature);
+
+              return <div
                 key={feature}
                 className={`grid grid-cols-3 items-center gap-4 px-6 py-5 sm:px-8 ${index % 2 === 0 ? "bg-slate-50/80" : "bg-white"}`}
               >
                 <div className="font-semibold text-slate-900 text-left">{feature}</div>
-                <div className="text-emerald-600 font-medium text-left">{ours}</div>
-                <div className="text-slate-600 text-left pt-2">{theirs}</div>
+                <div className={`${shouldUseGrey ? "text-gray-500" : "text-emerald-600"} font-medium text-left`}>{ours}</div>
+                <div className={`${shouldUseGrey ? "text-gray-500" : "text-slate-600"} text-left pt-2`}>{theirs}</div>
               </div>
-            ))}
+            })}
           </div>
         </div>
       </div>

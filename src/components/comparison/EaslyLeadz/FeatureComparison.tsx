@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
 
 const rows = [
-  ["Starting Price", "$9 for 250 credits", "$39/mo (Basic Plan)"],
+  ["Starting Price", "$20/mo", "$30/mo (Basic Plan)"],
   ["Phone Number Accuracy", "91% Verified", "~ 60–70% reported"],
-  ["Credit Refund Policy", "100% credits back for wrong numbers", "Limited Refund Policy"],
-  ["Geographic Coverage", "Global (Worldwide)", "Primarily India Focused"],
+  ["Geographic Coverage", "India + Global", "Primarily India Focused"],
   ["Chrome Extension", "Yes – Instant Results", "Yes"],
   ["Phone Discovery Speed", "10 seconds", "~ 20–40 seconds"],
   ["Email Finder", "Yes", "Yes"],
   ["GDPR Compliant", "Yes", "Limited Info"],
-  ["Bulk Export", "Yes", "Yes (Higher Plans)"],
-  ["Pay–Per–Use Option", "Yes – no subscription needed", "No – Subscription required"],
-  ["Chrome Web Store Rating", "4.9/5 (1000+ reviews)", "3.8/5"],
-  ["Director/C-Level Contacts", "Yes – dedicated Director Phone feature", "Yes"],
-  ["MSME Directory", "Yes – 1 M+ Indian businesses", "No"],
+  ["Bulk Export", "Yes (From Starter Plan)", "Yes (Higher Plans)"],
+  ["Pay–Per–Use Option", "Yes", "No – Subscription required"],
+  ["Chrome Web Store Rating", "4.9/5 ", "4.8/5"],
+  ["C-Level Contacts", "Yes", "Yes"],
+  ["Bulk Upload", "Yes (From Starter Plan)", "No"],
 ];
 
 const FeatureComparison = () => {
@@ -60,16 +59,18 @@ const FeatureComparison = () => {
           </div>
 
           <div className="divide-y divide-slate-200 bg-white text-sm text-slate-700">
-            {rows.map(([feature, ours, theirs], index) => (
-              <div
+            {rows.map(([feature, ours, theirs], index) => {
+              const answersMatch = String(ours).trim() === String(theirs).trim();
+
+              return <div
                 key={feature}
                 className={`grid grid-cols-3 items-center gap-4 px-6 py-5 sm:px-8 ${index % 2 === 0 ? "bg-slate-50/80" : "bg-white"}`}
               >
                 <div className="font-semibold text-slate-900 text-left">{feature}</div>
-                <div className="text-emerald-600 font-medium text-left">{ours}</div>
-                <div className="text-slate-600 text-left pt-2">{theirs}</div>
+                <div className={`${answersMatch ? "text-slate-400" : "text-emerald-600"} font-medium text-left`}>{ours}</div>
+                <div className={`${answersMatch ? "text-slate-400" : "text-slate-600"} text-left pt-2`}>{theirs}</div>
               </div>
-            ))}
+            })}
           </div>
         </div>
       </div>

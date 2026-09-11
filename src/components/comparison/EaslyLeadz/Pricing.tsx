@@ -1,40 +1,34 @@
-import { ArrowRight, Check, Crown, Sparkles } from "lucide-react";
+import { Check, Crown, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const pricingPlans = [
   {
     title: "ObserveNow.AI",
-    credits: "3,400 credits per year",
+    credits: "680 contacts per year",
     price: "₹2,083",
     period: "/month",
     billed: "Billed annually",
     features: [
       "91% accuracy guarantee",
-      "Global coverage (worldwide)",
-      "100% credit refund for wrong numbers",
-      "No subscription required",
+      "India + Global coverage",
+      "Bulk Upload",
     ],
-    buttonText: "Try ObserveNow.AI",
-    buttonHref: "https://dashboard.observenow.ai/signup",
     featured: true,
     badgeText: "BEST VALUE",
     Icon: Crown,
   },
   {
     title: "EasyLeadz",
-    credits: "3,400 credits per year",
-    price: "₹3,500",
+    credits: "600 contacts per year",
+    price: "₹2417",
     period: "/month",
     billed: "Billed annually",
     features: [
       "~60-70% accuracy (user reported)",
       "Primarily India-focused",
-      "Limited refund policy",
-      "Monthly subscription required",
+      "No Bulk Upload",
     ],
-    buttonText: "Visit EasyLeadz",
-    buttonHref: "https://easyleadz.com",
     featured: false,
     Icon: Sparkles,
   },
@@ -117,7 +111,11 @@ const Pricing = () => {
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <Check className={`mt-1 h-4 w-4 ${plan.featured ? "text-emerald-500" : "text-red-500"}`} />
+                      {plan.featured ? (
+                        <Check className="mt-1 h-4 w-4 text-emerald-500" />
+                      ) : (
+                        <X className="mt-1 h-4 w-4 text-red-500" />
+                      )}
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -132,10 +130,6 @@ const Pricing = () => {
                     : "bg-[#6b7280] text-white hover:bg-[#565d64]"
                 }`}
               >
-                <a href={plan.buttonHref} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2">
-                  {plan.buttonText}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
               </Button>
               </div>
             </motion.div>

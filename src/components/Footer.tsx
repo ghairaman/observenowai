@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/observenow_ai.png";
-import { Linkedin, X, Instagram, Facebook} from "lucide-react";
+import { Linkedin, X, Instagram, Facebook, Youtube} from "lucide-react";
 
 import { Link } from "react-router-dom";
 
@@ -27,6 +27,11 @@ const socialLinks = [
     icon: Facebook,
     url: "https://www.facebook.com/people/ObserveNow-AI/61582981785784/", 
     label: "Facebook",
+  },
+  {
+    icon: Youtube,
+    url: "https://www.youtube.com/@Observenow-AI", 
+    label: "Youtube",
   },
 ];
 

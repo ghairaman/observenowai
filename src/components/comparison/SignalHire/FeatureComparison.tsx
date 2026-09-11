@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 
 const rows = [
-  ["Starting Price", "$9 for 250 credits", "$49/mo (350 credits)"],
+  ["Starting Price", "$20/mo", "$99/mo"],
   ["Phone Number Accuracy", "91% Verified", "~75-85% reported"],
-  ["Credit Refund Policy", "100% credits back for wrong numbers", "No refund on used credits"],
   ["Chrome Extension", "Yes – Instant Results", "Yes"],
-  ["Free Trial", "5 free credits on signup", "5 free credits"],
+  ["Free Trial", "20 free credits on signup", "5 free credits"],
   ["Phone Discovery Speed", "10 seconds", "~10-20 seconds"],
   ["Email Finder", "Yes", "Yes"],
   ["GDPR Compliant", "Yes", "Yes"],
-  ["Bulk Search", "Yes", "Yes – higher plans"],
+  ["Bulk Search", "Yes (From Starter plan)", "Yes – higher plans"],
   ["Social Profile Links", "LinkedIn focused", "Multiple platforms (LinkedIn, Facebook, GitHub)"],
-  ["Pay–Per-Use Option", "Yes – no subscription needed", "No – monthly subscription required"],
-  ["Chrome Web Store Rating", "4.9/5 (1000+ reviews)", "4.4/5"],
+  ["Pay–Per-Use Option", "Yes", "No – monthly subscription required"],
+  ["Chrome Web Store Rating", "4.9/5", "4.6/5"],
   ["Recruiting Features", "Basic contact discovery", "ATS integrations, team features"],
 ];
 
@@ -60,16 +59,23 @@ const FeatureComparison = () => {
           </div>
 
           <div className="divide-y divide-slate-200 bg-white text-sm text-slate-700">
-            {rows.map(([feature, ours, theirs], index) => (
-              <div
+            {rows.map(([feature, ours, theirs], index) => {
+              const answersMatch = ours === theirs;
+              const greyMatchFeatures = new Set([
+                "Social Profile Links",
+                "Recruiting Features",
+              ]);
+              const shouldUseGrey = answersMatch || greyMatchFeatures.has(feature);
+
+              return <div
                 key={feature}
                 className={`grid grid-cols-3 items-center gap-4 px-6 py-5 sm:px-8 ${index % 2 === 0 ? "bg-slate-50/80" : "bg-white"}`}
               >
                 <div className="font-semibold text-slate-900 text-left">{feature}</div>
-                <div className="text-emerald-600 font-medium text-left">{ours}</div>
-                <div className="text-slate-600 text-left pt-2">{theirs}</div>
+                <div className={`${shouldUseGrey ? "text-gray-500" : "text-emerald-600"} font-medium text-left`}>{ours}</div>
+                <div className={`${shouldUseGrey ? "text-gray-500" : "text-slate-600"} text-left pt-2`}>{theirs}</div>
               </div>
-            ))}
+            })}
           </div>
         </div>
       </div>
