@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const CoreOfferingsSection = () => {
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         {/* Badge */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ const CoreOfferingsSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="relative max-w-5xl mx-auto bg-[hsl(var(--brand-violet)/90%)] rounded-3xl p-8 md:p-12 overflow-hidden"
+          className="relative max-w-6xl mx-auto bg-[hsl(var(--brand-violet)/90%)] rounded-3xl p-8 md:p-12 overflow-hidden"
         >
 
 {/* Animated Chevrons Background */}

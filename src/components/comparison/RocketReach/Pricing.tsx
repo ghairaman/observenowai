@@ -1,4 +1,4 @@
-import { Check, Crown, Sparkles, X } from "lucide-react";
+import { ArrowRight, Check, Crown, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -136,6 +136,15 @@ const Pricing = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Button size="lg" className="btn-gradient button text-primary-foreground text-base group shadow-violet">
+            <a href="https://dashboard.observenow.ai/signup" className="flex items-center gap-2">
+              TRY OBSERVENOW.AI
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

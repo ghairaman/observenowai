@@ -3,7 +3,7 @@ import { ArrowDownRight, Phone, Star } from "lucide-react";
 const cards = [
   {
     icon: ArrowDownRight,
-    title: "6x",
+    title: "2.3x",
     subtitle: "Cheaper than RocketReach",
   },
   {

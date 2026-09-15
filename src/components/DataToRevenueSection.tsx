@@ -292,131 +292,102 @@ const DataToRevenueSection = () => {
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      style={{ height: `calc(100vh + ${SCROLL_PER_TAB * tabs.length}px)` }}
-    >
-      <section
-        className="py-20 px-4 sm:px-6 bg-background"
-        style={{ position: "sticky", top: 0, minHeight: "100vh", overflow: "hidden" }}
+    <section className="px-4 py-20 sm:px-6 bg-background">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex justify-center mb-6">
+          <span className="section-badge border border-[#470277]">
+            Data-driven Strategy
+          </span>
+        </div>
+
+        <h2 className="font-sora text-4xl md:text-5xl font-bold text-center mb-3">
+          From Data to <span className="text-[#72339F]/80">Revenue</span>
+        </h2>
+
+        <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+          A structured 5-stage approach that transforms raw lead data into targeted outreach, smarter decisions, and sales growth.
+        </p>
+      </div>
+
+      <div
+        ref={sectionRef}
+        style={{ height: `calc(100vh + ${SCROLL_PER_TAB * tabs.length}px + 40px)` }}
       >
-        <div className="max-w-5xl mx-auto">
+        <div
+          className="max-w-5xl mx-auto px-4 sm:px-6"
+          style={{ position: "sticky", top: "72px", minHeight: "calc(100vh - 90px)", display: "flex", alignItems: "center" }}
+        >
+          <div className="w-full">
+            <div className="relative mb-10 overflow-x-auto">
+              <div className="flex min-w-max sm:min-w-0 border-b border-gray-200">
+                {tabs.map((tab, index) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(index)}
+                    className={`
+                      relative flex-1 text-center py-3 px-3 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 whitespace-nowrap
+                      ${activeTab === index
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground/70"
+                      }
+                    `}
+                  >
+                    {tab.title}
 
-          {/* Badge */}
-          <div className="flex justify-center mb-6">
-            <span className="section-badge border border-[#470277]">
-              Data-driven Strategy
-            </span>
-          </div>
+                    {activeTab === index && (
+                      <motion.div
+                        layoutId="tab-underline"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#72339F]"
+                        transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-          {/* Heading */}
-          <h2 className="font-sora text-4xl md:text-5xl font-bold text-center mb-3">
-            From Data to <span className="text-[#72339F]/80">Revenue</span>
-          </h2>
-
-          <p className="font-sora text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            A structured 5-stage approach that transforms raw lead data into targeted outreach, smarter decisions, and sales growth.
-          </p>
-
-          {/* ── TAB NAV ── */}
-          <div className="relative mb-10 overflow-x-auto">
-            <div className="flex min-w-max sm:min-w-0 border-b border-gray-200">
-              {tabs.map((tab, index) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(index)}
-                  className={`
-                    relative flex-1 text-center py-3 px-3 sm:px-6 text-sm sm:text-base font-medium transition-colors duration-200 whitespace-nowrap
-                    ${activeTab === index
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground/70"
-                    }
-                  `}
+            <div className="relative min-h-[380px] sm:min-h-[420px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center"
                 >
-                  {tab.title}
-
-                  {activeTab === index && (
-                    <motion.div
-                      layoutId="tab-underline"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#72339F]"
-                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                  <div className="flex items-center justify-center mt-8">
+                    <img
+                      src={tabs[activeTab].image}
+                      alt={tabs[activeTab].heading}
+                      className="w-full max-w-[360px] sm:max-w-[420px] h-auto object-contain drop-shadow-xl"
                     />
-                  )}
-                </button>
-              ))}
+                  </div>
+
+                  <div className="flex flex-col gap-4 mt-8">
+                    <span className="inline-flex w-fit items-center px-4 py-1.5 rounded-full bg-[#72339F] text-white text-xs font-semibold tracking-wide">
+                      {tabs[activeTab].badge}
+                    </span>
+
+                    <h3 className="font-sora text-3xl sm:text-4xl font-bold text-foreground leading-tight">
+                      {tabs[activeTab].heading}
+                    </h3>
+
+                    <p className="text-muted-foreground text-base leading-relaxed max-w-md">
+                      {tabs[activeTab].desc}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
-
-          {/* ── TAB CONTENT ── */}
-          <div className="relative min-h-[420px] sm:min-h-[380px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center"
-              >
-                {/* Left – Illustration */}
-                <div className="flex items-center justify-center mt-8">
-                  <img
-                    src={tabs[activeTab].image}
-                    alt={tabs[activeTab].heading}
-                    className="w-full max-w-[360px] sm:max-w-[420px] h-auto object-contain drop-shadow-xl"
-                  />
-                </div>
-
-                {/* Right – Text */}
-                <div className="flex flex-col gap-4 mt-8">
-                  <span className="inline-flex w-fit items-center px-4 py-1.5 rounded-full bg-[#72339F] text-white text-xs font-semibold tracking-wide">
-                    {tabs[activeTab].badge}
-                  </span>
-
-                  <h3 className="font-sora text-3xl sm:text-4xl font-bold text-foreground leading-tight">
-                    {tabs[activeTab].heading}
-                  </h3>
-
-                  <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-                    {tabs[activeTab].desc}
-                  </p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <AnalyticsSection />
-
-          {/* Stats Grid */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"> */}
-            {/* {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="font-sora bg-card rounded-2xl p-6 border-2 border-[#72339F] text-center shadow-[0_8px_24px_rgba(114,51,159,0.15)]"
-              >
-                <div className="w-10 h-10 bg-[#72339F] rounded-xl mx-auto mb-4 flex items-center justify-center">
-                  <img src={stat.icon} className="w-12 h-12 object-contain" />
-                </div>
-
-                <div className="font-sora text-3xl font-bold text-foreground mb-1">
-                  <CountUp value={stat.value} />
-                </div>
-
-                <div className="font-sora text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))} */}
-          {/* </div> */}
-
         </div>
-      </section>
-    </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto">
+        <AnalyticsSection />
+      </div>
+    </section>
   );
 };
 
