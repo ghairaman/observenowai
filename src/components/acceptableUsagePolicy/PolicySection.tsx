@@ -11,13 +11,6 @@ const P = ({ children }: { children: React.ReactNode }) => (
   <p className="font-dm text-muted-foreground leading-relaxed mb-4">{children}</p>
 );
 
-const SubSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div className="mb-4">
-    <h3 className="text-lg font-semibold text-foreground mb-2">{title}</h3>
-    {children}
-  </div>
-);
-
 const BulletList = ({ items }: { items: string[] }) => (
   <ul className="list-disc list-inside space-y-2 mb-4 pl-2 text-muted-foreground">
     {items.map((item, i) => (
@@ -25,34 +18,6 @@ const BulletList = ({ items }: { items: string[] }) => (
     ))}
   </ul>
 );
-
-const PrivacyContent = () => {
-  return (
-    <div className="container mx-auto max-w-10xl px-6 py-16">
-
-      <h1 className="font-sora text-3xl md:text-4xl font-bold text-foreground mb-2">
-        Privacy Policy — ObserveNow.AI
-      </h1>
-      <p className="text-muted-foreground mb-2">
-        <span className="text-foreground font-semibold">Effective Date:</span>{" "}
-        <span className="italic">1st March 2026</span>
-      </p>
-      <p className="text-muted-foreground mb-2">
-         <span className="text-foreground">Operated by</span>{" "}
-         <strong className="text-foreground">Adverbo Productions LLP</strong>
-      </p>
-      <p className="text-muted-foreground mb-2">
-        <span className="text-foreground">Website:</span>{" "}
-        <a href="/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
-          www.observenow.ai
-        </a>
-      </p>
-      <p className="text-muted-foreground mb-8">
-        <span className="text-foreground">Contact:</span>{" "}
-        <a href="mailto:finance@observenow.com" className="text-primary hover:underline">
-          finance@observenow.com
-        </a>
-      </p>
 
 const PolicySection = () => {
   return (
