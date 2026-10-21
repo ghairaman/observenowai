@@ -11,7 +11,7 @@ import {
 
 import heroDemoVideo from "@/assets/ObserveNow.AI-Demo.mp4";
 import contactsShot from "@/assets/product.jpeg";
-import uploadShot from "@/assets/productimg1.png";
+import uploadShot from "@/assets/enrich.png";
 import projectShot from "@/assets/productimg2.png";
 import structureShot from "@/assets/productimg3.png";
 import analyticsShot from "@/assets/productimg4.png";

@@ -10,6 +10,7 @@ import Contact from "./pages/Contact-page";
 import Pricing from "./pages/Pricing-page";
 import Product from "./pages/Product-page";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import AcceptableUsagePolicy from "./pages/AcceptableUsagePolicy";
 import TermsOfService from "./pages/TermsOfService";
 import GDPRPage from "./pages/GDPR";
 import DPDPPage from "./pages/DPDP";
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:slug" element={<BlogDetailPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/acceptable" element={<AcceptableUsagePolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/gdpr" element={<GDPRPage />} />
             <Route path="/dpdp" element={<DPDPPage />} />

@@ -268,6 +268,12 @@ const Footer = () => {
 </li>
     <span>|</span>
     <li>
+  <Link to="/acceptable" className="hover:text-black transition-colors">
+    Acceptable Usage Policy
+  </Link>
+</li>
+    <span>|</span>
+    <li>
   <Link to="/terms" className="hover:text-black transition-colors">
     Terms
   </Link>
