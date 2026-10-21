@@ -24,7 +24,7 @@ const VideoSection = () => {
         />
       </div>
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="aspect-video rounded-3xl shadow-lg overflow-hidden">
             <video
               src={RumiVideo}

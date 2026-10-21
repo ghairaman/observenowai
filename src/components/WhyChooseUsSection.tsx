@@ -144,7 +144,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import IndiaMapImg from "@/assets/india-map1.png";
+import { Sparkles } from "lucide-react";
+import IndiaMapImg from "@/assets/india-map-cropped.png";
 import BarChartImg from "@/assets/bar-chart.png";
 import MapPinImg from "@/assets/map-pin.png";
 
@@ -229,11 +230,11 @@ const LineChart = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const points = [
-    { x: 112, y: 88 }, { x: 206, y: 72 }, { x: 300, y: 62 },
-    { x: 394, y: 42 }, { x: 488, y: 30 },
+    { x: 12, y: 216 }, { x: 132, y: 150 }, { x: 252, y: 116 },
+    { x: 372, y: 62 }, { x: 500, y: 24 },
   ];
   const polyline = points.map(p => `${p.x},${p.y}`).join(" ");
-  const area = `${points[0].x},100 ` + polyline + ` ${points[points.length - 1].x},100`;
+  const area = `${points[0].x},246 ` + polyline + ` ${points[points.length - 1].x},246`;
   const controls = useAnimation();
 
   useEffect(() => {
@@ -242,20 +243,22 @@ const LineChart = () => {
 
   return (
     <div ref={ref} className="mt-6">
-      <div className="flex items-stretch">
-        <div className="flex flex-col items-end justify-between text-xs text-gray-500 pl-5 pr-3 h-56">
+      <div className="flex items-start">
+        <div className="flex flex-col items-end justify-between text-xs text-gray-500 pr-3 h-[266px] w-8 shrink-0">
           {["60", "40", "20", "0"].map(l => <span key={l}>{l}</span>)}
         </div>
-        <svg viewBox="0 0 608 104" preserveAspectRatio="none" className="flex-1 w-full h-56 overflow-visible">
+        <svg viewBox="0 0 520 266" className="flex-1 min-w-0 w-full aspect-[520/266] h-auto overflow-visible">
           <defs>
             <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#A855F7" stopOpacity="0.32" />
               <stop offset="100%" stopColor="#A855F7" stopOpacity="0.02" />
             </linearGradient>
           </defs>
-          {[28, 52, 76, 100].map((y) => (
-            <line key={y} x1="110" x2="490" y1={y} y2={y} stroke="#E5E7EB" strokeWidth="0.8" />
+          {[24, 98, 172, 246].map((y) => (
+            <line key={y} x1="12" x2="500" y1={y} y2={y} stroke="#DDE1E8" strokeWidth="1" />
           ))}
+          <line x1="12" x2="12" y1="24" y2="246" stroke="#B7BEC9" strokeWidth="1" />
+          <line x1="12" x2="500" y1="246" y2="246" stroke="#B7BEC9" strokeWidth="1" />
           <motion.polygon
             points={area}
             fill="url(#lineGrad)"
@@ -351,7 +354,7 @@ const WhyChooseUsSection = () => {
             <FadeUp delay={0}>
               <Card className="h-full min-h-[340px]">
               <div className="flex flex-col lg:flex-row gap-4">
-                <div className="flex-1 flex flex-col justify-between">
+                <div className="flex-1 min-w-0 flex flex-col">
                   <div>
                     <p className="font-sora text-4xl font-bold text-gray-900">
                       <AnimatedNumber value={800000} suffix="+" />
@@ -359,8 +362,8 @@ const WhyChooseUsSection = () => {
                     <p className="text-sm font-semibold text-gray-700 mt-0.5">B2B Organisations</p>
                     <p className="text-xs text-gray-400 mt-0.5">Covering up Business hubs across India</p>
                   </div>
-                  <div className="mt-4 space-y-2.5">
-                    <div className="flex items-center gap-4 bg-[#F3E8FF] px-4 py-2 rounded-md w-full max-w-[390px]">
+                  <div className="mt-8 space-y-2.5">
+                    <div className="flex items-center gap-4 bg-[#F3E8FF] px-4 py-2 rounded-md w-full">
                       <div className="w-8 h-8 flex items-center justify-center shrink-0">
                         <svg className="w-5 h-5 text-[#9B6BC0]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
@@ -369,7 +372,7 @@ const WhyChooseUsSection = () => {
                       </div>
                       <p className="text-xs text-gray-700 leading-tight">From startups to enterprises, empowering every sector of the Indian economy.</p>
                     </div>
-                    <div className="flex items-center gap-4 bg-[#F3E8FF] px-4 py-2 rounded-md w-full max-w-[390px]">
+                    <div className="flex items-center gap-4 bg-[#F3E8FF] px-4 py-2 rounded-md w-full">
                       <div className="w-8 h-8 flex items-center justify-center shrink-0">
                         <svg className="w-5 h-5 text-[#9B6BC0]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" strokeWidth="2" />
@@ -379,13 +382,13 @@ const WhyChooseUsSection = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-center w-full lg:w-[390px] xl:w-[440px] shrink-0 relative">
+                <div className="flex items-center justify-center w-full lg:w-[340px] xl:w-[380px] shrink-0 relative">
                   <img src={IndiaMapImg} alt="India Map" className="w-full max-h-[300px] object-contain" />
                   {/* Map Pins */}
-                  <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 top-8 left-40" />
-                  <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 top-24 right-28" />
+                  <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 top-8 left-32" />
+                  <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 top-24 right-32" />
                   <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 top-33 right-26" />
-                  <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 bottom-20 left-40" />
+                  <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 bottom-20 left-32" />
                   <img src={MapPinImg} alt="Pin" className="absolute w-6 h-6 top-32 left-32" />
                   <img src={MapPinImg} alt="Pin" className="absolute w-5 h-5 top-50 right-50" />
                 </div>
@@ -442,7 +445,7 @@ const WhyChooseUsSection = () => {
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-center w-36 shrink-0">
+                <div className="flex items-center justify-center w-36 shrink-0 -translate-x-6">
                   <DonutChart percent={91} />
                 </div>
               </div>
@@ -517,7 +520,7 @@ const WhyChooseUsSection = () => {
                 <LineChart />
               </div>
               <div className="mt-4 flex items-center gap-3 bg-[#F3E8F8] rounded-xl px-4 py-3">
-                <span className="text-[10px] text-[#7C3AED]">⚡</span>
+                <Sparkles className="h-5 w-5 shrink-0 text-[#5B21B6]" strokeWidth={1.8} />
                 <div>
                   <p className="text-xs font-semibold text-[#5B21B6]">Fresh. Verified. High Intent.</p>
                   <p className="text-[11px] text-gray-500">Updated daily to help you close faster.</p>
