@@ -2,10 +2,9 @@
 import { motion } from "framer-motion";
 
 import FeatureImg1 from "@/assets/credits-allocation.mp4";
-import FeatureImg2 from "@/assets/img2.gif";
-// import FeatureImg3 from "@/assets/contact-video.mp4";
+import FeatureImg2 from "@/assets/prospecting.png";
 import FeatureImg4 from "@/assets/chrome-extension.mp4";
-import FeatureImg3 from "@/assets/verified-contacts.png";
+import FeatureImg3 from "@/assets/contact.png";
 
 
 const features = [

@@ -10,7 +10,8 @@ import StepLine from "@/assets/step-line.png";
 
 import PuzzleDeco from "@/assets/puzzle.png";
 
-import FeatureLeftImg from "@/assets/howitworks.png";
+// import FeatureLeftImg from "@/assets/howitworks.png";
+import FeatureLeftImg from "@/assets/chromeExtension.png";
 
 const steps = [
   {

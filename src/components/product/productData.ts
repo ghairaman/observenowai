@@ -15,7 +15,7 @@ import uploadShot from "@/assets/enrich.png";
 import projectShot from "@/assets/productimg2.png";
 import structureShot from "@/assets/productimg3.png";
 import analyticsShot from "@/assets/productimg4.png";
-import teamShot from "@/assets/laptop-product.png";
+import teamShot from "@/assets/teamMember.png";
 import mobileShot from "@/assets/iphone-img.png";
 import addRemoveIcon from "@/assets/add&remove.svg";
 import activityMonitoringIcon from "@/assets/activity-monitoring.svg";
